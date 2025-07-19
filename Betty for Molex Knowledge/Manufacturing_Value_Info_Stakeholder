@@ -1,0 +1,714 @@
+{
+  "metadata": {
+    "merged_timestamp": "2025-01-06T22:52:45.678Z",
+    "source_files": [
+      "Portfolio_Outcomes.json",
+      "Manufacturing_Value_Stream_Inventory.json",
+      "Idea_Portfolio.json",
+      "Outcome_to_GPS.json",
+      "GPS_Tier_Mapping.json"
+    ],
+    "total_records": 386,
+    "file_summary": {
+      "Portfolio_Outcomes": {
+        "record_count": 39,
+        "data_type": "array",
+        "sample_fields": [
+          "theme",
+          "sub_theme",
+          "outcome_statement"
+        ]
+      },
+      "Manufacturing_Value_Stream_Inventory": {
+        "record_count": 31,
+        "data_type": "array",
+        "sample_fields": [
+          "value_stream_name",
+          "description",
+          "cross_mapping"
+        ]
+      },
+      "Idea_Portfolio": {
+        "record_count": 39,
+        "data_type": "array",
+        "sample_fields": [
+          "category",
+          "theme",
+          "idea_or_outcome_statement",
+          "score_46",
+          "score_58",
+          "score_13",
+          "score_5",
+          "total_points",
+          "percent_coverage"
+        ]
+      },
+      "Outcome_to_GPS": {
+        "record_count": 39,
+        "data_type": "array",
+        "sample_fields": [
+          "outcome_statement",
+          "theme",
+          "gps_tier_label",
+          "gps_description"
+        ]
+      },
+      "GPS_Tier_Mapping": {
+        "record_count": 238,
+        "data_type": "array",
+        "sample_fields": [
+          "tier_label",
+          "description"
+        ]
+      }
+    }
+  },
+  "datasets": {
+    "Portfolio_Outcomes": [
+      {
+        "theme": "Content",
+        "sub_theme": "Acquire",
+        "outcome_statement": "Compelling value proposition is offered to our customers"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Acquire",
+        "outcome_statement": "Our brand is immediately recognized and revered"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Agility",
+        "outcome_statement": "Talent fluidly moves and aligns in real time to the greatest value creating priorities"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Agility",
+        "outcome_statement": "The discipline and fortitude to change exists throughout the organization"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Agility",
+        "outcome_statement": "Our employees across the enterprise work together as a strong and cohesive team"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Confidence",
+        "outcome_statement": "Each of our employees achieve their career aspirations"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Confidence",
+        "outcome_statement": "The perspectives of individual employees are respected and valued"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Conviction",
+        "outcome_statement": "Every employee feels they are part of something extraordinary"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Conviction",
+        "outcome_statement": "Every employee feels their well-being is important to the company"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Conviction",
+        "outcome_statement": "Employees always get the right things done at the right time in the right way"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Conviction",
+        "outcome_statement": "Leaders across the company are admired and respected"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Decisions",
+        "outcome_statement": "The most informed, intelligent and complete insights are created"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Decisions",
+        "outcome_statement": "Data is complete and accurate"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Decisions",
+        "outcome_statement": "Decsions are properly vetted"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Decisions",
+        "outcome_statement": "Employees closest to the point of business impact are empowered to make decisions"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Experience",
+        "outcome_statement": "Easy for customers to do business with us"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Experience",
+        "outcome_statement": "An unbelievable level of service is delivered to every customer"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Experience",
+        "outcome_statement": "Each customer feels they are most important to Molex"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Experience",
+        "outcome_statement": "Trust with customers"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Innovate",
+        "outcome_statement": "Every employee is liberated to see what can be possible"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Innovate",
+        "outcome_statement": "Encouraged to be curious"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Operations",
+        "outcome_statement": "Resources are aligned & focused on the needs and priorities of the business"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Operations",
+        "outcome_statement": "Appropriate funding is always available to support the business"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Operations",
+        "outcome_statement": "The way we work is continually optimized"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Partners",
+        "outcome_statement": "Partners help to create the most compelling products"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Partners",
+        "outcome_statement": "Each partner works as a seamless and natural extension of the other and Molex"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "Design process is effectively performed"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "We lead in developing and applying new technologies to products"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "Our digital assets are effectively leveraged"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "We accurately foresee our customer's needs before they know they have them"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "Product development capabilities are eagerly embraced and adopted by the organization"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "Molex, our customers and partners are entwined together"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "We ignite bold innovations with our customers to see what hasn't been seen before"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "The most accurate prototypes are rapidly created and validated"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Products",
+        "outcome_statement": "The freshest insights drive unexpected design breakthroughs"
+      },
+      {
+        "theme": "Content",
+        "sub_theme": "Talent",
+        "outcome_statement": "Our workforce is the envy of the industry and competition"
+      },
+      {
+        "theme": "Context",
+        "sub_theme": "Technology",
+        "outcome_statement": "The most beneficial technology solutions are effectively developed"
+      },
+      {
+        "theme": "Context",
+        "sub_theme": "Technology",
+        "outcome_statement": "Stakeholders are awestruck with value of our technology products and platform"
+      },
+      {
+        "theme": "Context",
+        "sub_theme": "Technology",
+        "outcome_statement": "Technology capabilities are effectively leveraged and adopted by the business"
+      }
+    ],
+    "Manufacturing_Value_Stream_Inventory": [
+      {
+        "value_stream_name": "Acquire Asset",
+        "description": "The end-to-end perspective of acquiring an asset, from initiating and approving the asset request to sourcing and processing procurement orders and delivering the asset to the requester.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Acquire Material",
+        "description": "The end-to-end perspective of acquiring material, from initiating and approving the material request, to sourcing and processing procurement orders and delivering the material to the requester.",
+        "cross_mapping": "Acquire Material Cross Mapping"
+      },
+      {
+        "value_stream_name": "Acquire Product",
+        "description": "The end-to-end perspective of a customer acquiring a product (goods or service) from the company, from the initial request to fulfilling the need.",
+        "cross_mapping": "Acquire Product Cross Mapping"
+      },
+      {
+        "value_stream_name": "Conduct Audit",
+        "description": "The end-to-end perspective of determining the degree to which the organization is adhering to established policies and regulations.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Create Policy",
+        "description": "The end-to-end perspective of creating and updating policies that govern how the organization operates and how customers and partners engage with the organization or with each other.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Deliver Initiative",
+        "description": "The end-to-end perspective of planning and executing an initiative.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Deliver Meeting",
+        "description": "The end-to-end perspective of planning and executing a meeting or other interaction.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Deliver Training",
+        "description": "The end-to-end perspective of planning, executing, and communicating a training course for the purpose of increasing knowledge.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Deploy Asset",
+        "description": "The end-to-end perspective of making an asset available for use within the organization and to the individual(s) requesting the asset.",
+        "cross_mapping": "Deploy Asset Cross Mapping"
+      },
+      {
+        "value_stream_name": "Deploy Facility",
+        "description": "The end-to-end perspective of planning, specifying, designing, and commissioning major or minor modifications to facility, including buildings, refineries, shipping centers, yards, and other structures.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Design Operation",
+        "description": "The end-to-end perspective of determining the need for, specifying, and setting up an operation, such as setting up or modifying a manufacturing assembly line or similar operation.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Develop Human Resource Career",
+        "description": "The end-to-end perspective of developing an individual's career, from performance assessment, to skills and experience enhancement and individual redeployment.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Develop Product",
+        "description": "The end-to-end perspective of delivering a ready-to-build design.",
+        "cross_mapping": "Develop Product Cross Mapping"
+      },
+      {
+        "value_stream_name": "Develop Strategy",
+        "description": "The end-to-end perspective of developing or refining a set of integrated and aligned visions, goals, objectives, and courses of action that provides direction and guides activity.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Disseminate Information",
+        "description": "The end-to-end perspective of requesting, creating, and delivering of information products to requester.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Ensure Policy Compliance",
+        "description": "The end-to-end perspective of ensuring conformance with legislation and organization-driven policies, from identifying compliance requirements, implementing controls, evaluating controls' effectiveness, addressing compliance incidents, and reporting compliance as required.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Establish Agreement",
+        "description": "The end-to-end perspective of establishing a new or updating an existing agreement with a customer or formalizing other agreements not addressed in the normal course of business.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Execute Campaign",
+        "description": "The end-to-end perspective of executing a campaign, from identifying the need for a campaign, to planning, designing, implementing, and measuring the effectiveness of the campaign.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Execute Operation",
+        "description": "The end-to-end perspective of planning, initiating, running, and terminating an operation.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Execute Route",
+        "description": "The end-to-end perspective of transporting or moving a conveyer from one location to another safely and efficiently while meeting regulatory compliance.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Make a Trip",
+        "description": "The end-to-end perspective of planning and preparing for a trip, departing and arriving at interim or final destinations, and terminating the trip, using any viable means or form or conveyance appropriate to completing the trip.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Manufacture Product",
+        "description": "The end-to-end perspective of creating a ready-to-acquire product.",
+        "cross_mapping": "Manufacture Product Cross Map"
+      },
+      {
+        "value_stream_name": "Onboard Human Resource",
+        "description": "The end-to-end perspective of identifying, exploring, and selecting an individual to fill a need within an organization.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Onboard Partner",
+        "description": "The end-to-end perspective of identifying and commencing business with other organizations for mutual benefit.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Optimize Asset and Material Inventory",
+        "description": "The end-to-end perspective of assessing, balancing, resupplying, and balancing an asset inventory or materials inventory.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Optimize Investment Portfolio",
+        "description": "The end-to-end perspective of deciding where to make investment portfolio, based on the understanding of the enterprise's goals, strategy, current positions, and external forces.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Optimize Network",
+        "description": "The end-to-end perspective of assessing, designing, and initiating modifications to a network for planned events, interventions, recovering from unplanned incidents, and streamlining real-time activity.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Resolve Incident",
+        "description": "The end-to-end perspective of activities necessary to identify, scope, track, and address an incident as well as identify areas of improvement in order to reduce future likelihood or improve future responses.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Resolve Inquiry",
+        "description": "The end-to-end perspective necessary to track and resolve a question, request, feedback, or comment.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Send Shipment",
+        "description": "The end-to-end perspective of planning, initiating, packaging, sending, tracking, and receiving one or more shipment items from one location to another.",
+        "cross_mapping": null
+      },
+      {
+        "value_stream_name": "Settle Payment Obligation",
+        "description": "The end-to-end set of activities necessary for determining, communicating, and settling (exchanging funds against) a payment obligation.",
+        "cross_mapping": null
+      }
+    ],
+    "Idea_Portfolio": [
+      {
+        "category": "Content",
+        "theme": "Acquire",
+        "idea_or_outcome_statement": "Compelling value proposition is offered to our customers",
+        "score_46": 0.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 0.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Content",
+        "theme": "Acquire",
+        "idea_or_outcome_statement": "Our brand is immediately recognized and revered",
+        "score_46": 1.0,
+        "score_58": 1.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 2.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Agility",
+        "idea_or_outcome_statement": "Talent fluidly moves and aligns in real time to the greatest value creating priorities",
+        "score_46": 1.0,
+        "score_58": 2.0,
+        "score_13": 3.0,
+        "score_5": 0.0,
+        "total_points": 6.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Context",
+        "theme": "Agility",
+        "idea_or_outcome_statement": "The discipline and fortitude to change exists throughout the organization",
+        "score_46": 1.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 1.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Agility",
+        "idea_or_outcome_statement": "Our employees across the enterprise work together as a strong and cohesive team",
+        "score_46": 1.0,
+        "score_58": 3.0,
+        "score_13": 2.0,
+        "score_5": 0.0,
+        "total_points": 6.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Context",
+        "theme": "Confidence",
+        "idea_or_outcome_statement": "Each of our employees achieve their career aspirations",
+        "score_46": 0.0,
+        "score_58": 1.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 1.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Confidence",
+        "idea_or_outcome_statement": "The perspectives of individual employees are respected and valued",
+        "score_46": 2.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 2.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Context",
+        "theme": "Conviction",
+        "idea_or_outcome_statement": "Every employee feels they are part of something extraordinary",
+        "score_46": 3.0,
+        "score_58": 3.0,
+        "score_13": 2.0,
+        "score_5": 0.0,
+        "total_points": 8.0,
+        "percent_coverage": 0.75
+      },
+      {
+        "category": "Context",
+        "theme": "Conviction",
+        "idea_or_outcome_statement": "Every employee feels their well-being is important to the company",
+        "score_46": 0.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 0.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Conviction",
+        "idea_or_outcome_statement": "Employees always get the right things done at the right time in the right way",
+        "score_46": 3.0,
+        "score_58": 2.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 5.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Context",
+        "theme": "Conviction",
+        "idea_or_outcome_statement": "Leaders across the company are admired and respected",
+        "score_46": 0.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 0.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Decisions",
+        "idea_or_outcome_statement": "The most informed, intelligent and complete insights are created",
+        "score_46": 1.0,
+        "score_58": 1.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 2.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Decisions",
+        "idea_or_outcome_statement": "Data is complete and accurate",
+        "score_46": 0.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 0.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Decisions",
+        "idea_or_outcome_statement": "Decisions are properly vetted",
+        "score_46": 1.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 1.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Context",
+        "theme": "Decisions",
+        "idea_or_outcome_statement": "Employees closest to the point of business impact are empowered to make decisions",
+        "score_46": 2.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 5.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Content",
+        "theme": "Experience",
+        "idea_or_outcome_statement": "Easy for customers to do business with us",
+        "score_46": 1.0,
+        "score_58": 2.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 3.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Content",
+        "theme": "Experience",
+        "idea_or_outcome_statement": "An unbelievable level of service is delivered to every customer",
+        "score_46": 2.0,
+        "score_58": 1.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 3.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Content",
+        "theme": "Experience",
+        "idea_or_outcome_statement": "Each customer feels they are most important to Molex",
+        "score_46": 3.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 6.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Context",
+        "theme": "Innovate",
+        "idea_or_outcome_statement": "Every employee is liberated to see what can be possible",
+        "score_46": 1.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 4.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Context",
+        "theme": "Innovate",
+        "idea_or_outcome_statement": "Employees are encouraged and supported to be curious and innovative new idea",
+        "score_46": 1.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 4.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Content",
+        "theme": "Operations",
+        "idea_or_outcome_statement": "Resources are aligned & focused on the needs and priorities of the business",
+        "score_46": 2.0,
+        "score_58": 3.0,
+        "score_13": 3.0,
+        "score_5": 3.0,
+        "total_points": 11.0,
+        "percent_coverage": 1.0
+      },
+      {
+        "category": "Content",
+        "theme": "Operations",
+        "idea_or_outcome_statement": "Appropriate funding is always available to support the business",
+        "score_46": 0.0,
+        "score_58": 0.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 0.0,
+        "percent_coverage": 0.0
+      },
+      {
+        "category": "Content",
+        "theme": "Operations",
+        "idea_or_outcome_statement": "The way we work is continually optimized",
+        "score_46": 1.0,
+        "score_58": 1.0,
+        "score_13": 2.0,
+        "score_5": 2.0,
+        "total_points": 6.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Content",
+        "theme": "Partners",
+        "idea_or_outcome_statement": "Partners help to create the most compelling products",
+        "score_46": 0.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 3.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Content",
+        "theme": "Partners",
+        "idea_or_outcome_statement": "Each partner works as a seamless and natural extension of the other and Molex",
+        "score_46": 0.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 3.0,
+        "percent_coverage": 0.25
+      },
+      {
+        "category": "Content",
+        "theme": "Products",
+        "idea_or_outcome_statement": "Design process is effectively performed",
+        "score_46": 3.0,
+        "score_58": 3.0,
+        "score_13": 0.0,
+        "score_5": 0.0,
+        "total_points": 6.0,
+        "percent_coverage": 0.5
+      },
+      {
+        "category": "Content",
+        "theme": "Products",
+        "idea_or_outcome_statement": "We lead in developing and applying new technologies to products",
+        "score_46": 1.0,
+        "score_58": 1.0,
+        "score_13": 0

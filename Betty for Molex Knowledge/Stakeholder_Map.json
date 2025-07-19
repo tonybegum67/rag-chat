@@ -1,0 +1,524 @@
+[
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Account Manager",
+    "description": "An individual who oversees customer relations, interacts with new, existing, and potential customers, designs and implements customer service policies, and compiles and analyzes customer data."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Accountant",
+    "description": "An individual who records, tracks, analyzes, and reports on the finances of the organization."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Architect",
+    "description": "An individual or organization that designs plans and technical drawings for aesthetically pleasing and practical buildings."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Asset Maintainer",
+    "description": "An individual or organization that repairs, restores, cleans, operates, or otherwise keeps an asset ready for use."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Asset Manager",
+    "description": "An individual or organization that is responsible for the acquisition, installation, proper functioning, and decommissioning of a set of assets."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Audit Subject",
+    "description": "An individual or organization that is the subject of an audit."
+  },
+  {
+    "stakeholder_type": "Internal/External",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Auditor",
+    "description": "An individual or organization that gathers, reviews, analyzes, and reports on the financial, legal, or other records of an organization, on behalf of third parties."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Board Director",
+    "description": "A person having managerial, supervisory, investigatory, or advisory powers over an organization."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Business Manager",
+    "description": "An individual who leads and oversees an organization or a department's employees and operations."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Campaign Requestor",
+    "description": "An individual who initiates a campaign on behalf of a business."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Campaign Resource",
+    "description": "An individual or organization that supplies material or assistance to a campaign."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Customer",
+    "stakeholder_name": "Campaign Target",
+    "description": "An individual who is the intended recipient of the message of a campaign."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Candidate",
+    "description": "An individual who applies for a job or is nominated for a position in the organization."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Certification Authority",
+    "description": "An organization that approves the issuance of a credential certifying to the existence, level, or quality of one or more product characteristics."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Chief Executive Officer",
+    "description": "An individual who makes decisions affecting a business as a whole and who represents the business to the public at large."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Chief Financial Officer",
+    "description": "An individual who manages the finances of a business, including cash flow and financial planning."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Chief Risk Officer",
+    "description": "An individual who defines and assesses financial, reputational, legal, market, or other kinds of risk that the organization may undertake."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Compliance Officer",
+    "description": "An individual who ensures that a company complies with its outside regulatory and legal requirements and internal policies and bylaws."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Contract Officer",
+    "description": "An individual who prepares, negotiates, records, researches, and manages business contracts."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Conveyor Operator",
+    "description": "An individual who operates a transport conveyor (e.g., a train driver)."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Customer",
+    "stakeholder_name": "Customer",
+    "description": "A legal entity that has, plans to have, or has had an agreement with the organization, or is a recipient or beneficiary of the organization's products or services."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Customs Agent",
+    "description": "An individual who ensures that the correct rules and tariffs are being applied."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Data Analyst",
+    "description": "An individual who obtains and analyzes data for a business in order to provide information and knowledge to assist with decision making."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Enforcement Officer",
+    "description": "An individual who performs compliance and/or enforcement services on behalf of third parties."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Engineer",
+    "description": "An individual who uses math and science to solve technical problems and designs, maintains, and tests products, assets, and materials."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Facilitator",
+    "description": "An individual who helps enable groups during the course of an event to achieve specific objectives."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Facility Manager",
+    "description": "An individual or organization that inspects, maintains, and oversees grounds, buildings, and equipment to ensure that a workspace is safe and functional."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Facility Specialist",
+    "description": "An individual who identifies, oversees, and provides support for matters specific to the operation or oversight of a venue or location."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Finance Controller",
+    "description": "An individual who oversees the preparation and publication of financial statements."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Finance Manager",
+    "description": "An individual who administers a finance business unit and has a delegated authority to approve financial transactions to a specified limit."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Financial Analyst",
+    "description": "An individual who gathers and assesses information related to the finances of an organization."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Fulfillment Manager",
+    "description": "An individual or organization that assesses and/or approves an order request from a customer for one or more products or services, creates the order based on the request, releases the order for fulfillment, oversees the fulfillment status, closes the order and acts as single-point-of-contact on any internal or external order related questions."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Government",
+    "description": "A local or national official body of state or a related agency under the auspices of that body."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Hiring Manager",
+    "description": "An individual who negotiates terms for and onboards an employee."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Human Resource",
+    "description": "An individual who has, plans to have, or has had a legal agreement with the organization, which may include compensation and other benefits, on a temporary or permanent basis."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Human Resource Analyst",
+    "description": "An individual who identifies and assesses the current and future needs of the organization for individuals to perform work."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Incident Services Provider",
+    "description": "An individual or organization that responds to or manages the occurrence or consequences of one or more incidents."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Information Aggregator",
+    "description": "An organization that aggregates information from different sources and presents it as a value-add service."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Inventory Manager",
+    "description": "An individual who oversees the ordering, storing, receiving, and distributing of an organization's products, assets, and materials."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Inventory Technician",
+    "description": "A person or organization who receives, shelves, organizes, logs, pulls, and cleans inventory materials, assets, or products."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Investment Committee",
+    "description": "An organization responsible for identifying, communicating with, evaluating, and contracting with investors."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Lab Technician",
+    "description": "An individual who performs routine technical tasks in laboratories, sets up laboratories and equipment, conducts lab-based experiments, and records and analyzes results."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Legal Counsel",
+    "description": "An individual who oversees, identifies, and advises on legal issues in all departments and their interrelation."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Machinist",
+    "description": "An individual who installs machinery, performs routine maintenance checks, follows safety regulations, and operates mechanical or computer-operated equipment."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Manager",
+    "description": "An individual who oversees the work for a business unit."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Market Analyst",
+    "description": "An individual who studies consumer preferences, business conditions, and other factors to assess potential sales of a product or service"
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Marketing Manager",
+    "description": "An individual who creates and implements marketing budgets, procedures, and campaigns, and supervises, hires, and trains marketing employees."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Material Manager",
+    "description": "An individual who oversees inventory and supplies, manages vendor relationships, assesses supply needs, coordinates delivery schedules, signs purchase orders, and tracks the flow of inventory through the organization's supply chain."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Mentor",
+    "description": "An individual who provides ongoing assistance, training, and instruction to employees."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Merchandiser",
+    "description": "An individual who manages a store's inventory and product displays to attract customers and increase sales"
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Network Operations Manager",
+    "description": "An individual who plans and manages the operation of a network."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Network Performance Manager",
+    "description": "An individual who plans and manages the performance of a network."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Network Planner",
+    "description": "An individual who plans new or upgraded network infrastructure."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Operations Manager",
+    "description": "An individual who directs an operation, assembly line, process stream, or program."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Operator",
+    "description": "An individual who assembles, processes, and prepares products, places raw materials or products into manufacturing assets, and checks equipment and products to ensure quality production."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Partner",
+    "description": "A legal entity that has, plans to have, or has had an agreement with the organization for the provisioning of goods and/or services. "
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Partner Relationship Manager",
+    "description": "An individual who is responsible for coordinating, interacting with, evaluating, overseeing, and otherwise engaging with a partner on behalf of the organization."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Planner",
+    "description": "An individual who defines a schedule for an initiative, operation, asset, material, or product."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Procurement Team Member",
+    "description": "An individual who assists or enables the organization to source and acquire assets, materials, or services."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Procurer",
+    "description": "An individual who arranges, directs, evaluates, approves, or assigns sourcing or acquisition work for the organization."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Product Designer",
+    "description": "An individual who creates designs for new products, adding improvements to existing products and conducting market research for new product design ideas."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Product Developer",
+    "description": "An individual who refines and tests designs for improvements to existing products and for new product ideas."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Product Manager",
+    "description": "An individual who conceives, defines, determines, and oversees creation and distribution of a product or service on behalf of the business."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Product Owner",
+    "description": "An individual who oversees the development of products, determines the overall vision of products, manages various backlog items, and decides which features match clients\u2019 preferences."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Product Packager",
+    "description": "An individual who packages finished products, compiles instructions and other product documentation, matches and logs entitlements, and organizes products for shipment."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Program Manager",
+    "description": "An individual who creates, plans, oversees, and evaluates one or more initiatives in support of a set of related strategic goals."
+  },
+  {
+    "stakeholder_type": "Internal/External",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Project Manager",
+    "description": "An individual who creates, plans, oversees, and evaluates one or more initiatives."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Quality Reviewer",
+    "description": "An individual who verifies compliance with organization and regulatory polices, identifies trends or weaknesses in product developing and manufacturing processes, executes tests against regulatory requirements or controls, and is sometimes called quality control or quality assurance."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Customer",
+    "stakeholder_name": "Recipient",
+    "description": "An individual or organization that receives a shipment item."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Recruiter",
+    "description": "An individual who identifies and obtains human resources."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Regulator",
+    "description": "An individual or organization that creates, assesses, evaluates, and enforces legal, regulatory, or policy requirements on or for an organization."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Request Evaluator",
+    "description": "An individual or organization that assesses or approves a request for one or more assets, materials, or services."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Requester",
+    "description": "An individual who, on their own behalf or on behalf of others, makes a request for one or more assets, materials, or services."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Risk Manager",
+    "description": "An individual who assesses and mitigates danger, damage, or loss to the business."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Sender",
+    "description": "An individual or organization that sends a shipment item."
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Shipping Company",
+    "description": "An organization that ships items from a sender to a recipient."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Sponsor",
+    "description": "An individual or organization that is responsible for initiating or paying for an initiative."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Strategy Leader",
+    "description": "An individual who participates in the creation and execution of a strategy. "
+  },
+  {
+    "stakeholder_type": "External",
+    "stakeholder_category": "Partner",
+    "stakeholder_name": "Supplier",
+    "description": "An individual or organization that provides goods or services to the organization."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Tester",
+    "description": "An individual who subjects a product or service to an assessment of suitability or worth."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Technical Designer",
+    "description": "An individual who uses their technical and design skills to translate design concepts into actual products."
+  },
+  {
+    "stakeholder_type": "Internal/External",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Trainer",
+    "description": "An individual who provides instruction."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Training Program Manager",
+    "description": "An individual who oversees and approves training programs."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Training Recipient",
+    "description": "An individual who participates in a training course."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Training Team Member",
+    "description": "An individual who provides instruction to employees."
+  },
+  {
+    "stakeholder_type": "Internal/External",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Transport Operations Manager",
+    "description": "An individual responsible for the planning and operation of a transport service."
+  },
+  {
+    "stakeholder_type": "Internal",
+    "stakeholder_category": "Human Resource",
+    "stakeholder_name": "Treasurer",
+    "description": "An individual who oversees and manages the assets of a business."
+  }
+]

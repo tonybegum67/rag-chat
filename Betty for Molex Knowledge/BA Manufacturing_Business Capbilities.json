@@ -1,0 +1,123 @@
+[
+  {
+    "tier": 1,
+    "level": 1,
+    "capability_name": "Brand Management",
+    "definition": "Ability to establish, organize, analyze, administer, and report on all aspects of a name, symbol, or design that identifies and differentiates products, offerings, or organizational identities."
+  },
+  {
+    "tier": 1,
+    "level": 2,
+    "capability_name": "Brand Definition",
+    "definition": "Ability to establish and identify a brand."
+  },
+  {
+    "tier": 1,
+    "level": 3,
+    "capability_name": "Brand Establishment",
+    "definition": "Ability to declare a brand."
+  },
+  {
+    "tier": 1,
+    "level": 3,
+    "capability_name": "Brand Identification",
+    "definition": "Ability to find and recognize a brand."
+  },
+  {
+    "tier": 1,
+    "level": 2,
+    "capability_name": "Brand Portfolio Management",
+    "definition": "Ability to organize, aggregate, segment, and prioritize a collection of brands."
+  },
+  {
+    "tier": 1,
+    "level": 2,
+    "capability_name": "Brand Performance Management",
+    "definition": "Ability to determine how well a brand is meeting specification and objective levels, or delivering against plan."
+  },
+  {
+    "tier": 1,
+    "level": 3,
+    "capability_name": "Brand Performance Threshold Setting",
+    "definition": "Ability to determine acceptable or unacceptable levels of performance for a brand."
+  },
+  {
+    "tier": 1,
+    "level": 3,
+    "capability_name": "Brand Performance Threshold Measurement",
+    "definition": "Ability to determine if a brand is exceeding or falling short of an acceptable threshold of performance."
+  },
+  {
+    "tier": 1,
+    "level": 3,
+    "capability_name": "Brand Performance Constraints Determination",
+    "definition": "Ability to assess what is causing a brand to underperform."
+  },
+  {
+    "tier": 1,
+    "level": 2,
+    "capability_name": "Brand Loyalty Determination",
+    "definition": "Ability to assess and quantify the commitment and staying power that the brand has within the markets in which it has a presence."
+  }
+][
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Risk Threshold Determination",
+    "definition": "Ability to identify and define the level of acceptable risk associated with a customer."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Risk Aggregation",
+    "definition": "Ability to consider a collective set of risk factors about a customer and represent them from a rationalized perspective."
+  },
+  {
+    "tier": 2,
+    "level": 2,
+    "capability_name": "Customer Authentication Management",
+    "definition": "Ability to determine that a customer is who they claim to be based on a defined confidence level."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Authentication Threshold Determination",
+    "definition": "Ability to define the degree of confidence needed to authenticate a customer for various scenarios."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Authentication Level Determination",
+    "definition": "Ability to ascertain the degree to which a customer is authenticated."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Authentication",
+    "definition": "Ability to declare that a customer is who they claim to be."
+  },
+  {
+    "tier": 2,
+    "level": 2,
+    "capability_name": "Customer Authorization Management",
+    "definition": "Ability to define, determine, and assign customer access features, attributes, and characteristics."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Authorization Definition",
+    "definition": "Ability to describe the nature of customer authorization classifications for example authorization levels, ratings or categories."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Authorization Determination",
+    "definition": "Ability to ascertain authorization of a customer."
+  },
+  {
+    "tier": 2,
+    "level": 3,
+    "capability_name": "Customer Authorization Assignment",
+    "definition": "Ability to ascribe authorization to a customer."
+  }
+]
