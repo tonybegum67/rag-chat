@@ -1,0 +1,7 @@
+streamlit
+openai
+chromadb
+sentence-transformers
+PyPDF2
+python-docx
+tiktoken

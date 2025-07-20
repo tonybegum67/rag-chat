@@ -115,6 +115,21 @@ def sanitize_collection_name(name: str) -> str:
         return ""
     return name
 
+def clean_text(text: str) -> str:
+    """Cleans extracted text to fix common formatting issues."""
+    if not text:
+        return ""
+    # Add a space after a period or comma if it's followed by a letter.
+    # This helps fix issues like "word.Anotherword" or "123.Nextword".
+    text = re.sub(r'([.,])([a-zA-Z])', r'\\1 \\2', text)
+    # Replace multiple newline characters with two, preserving paragraphs.
+    text = re.sub(r'\\n\\s*\\n', '\\n\\n', text)
+    # Replace multiple spaces with a single space.
+    text = re.sub(r' +', ' ', text)
+    # Remove leading/trailing whitespace from each line
+    lines = (line.strip() for line in text.splitlines())
+    return "\\n".join(lines)
+
 def add_to_collection(collection_name: str, documents: List):
     """Adds new documents to a specified ChromaDB collection."""
     if not documents:
@@ -306,8 +321,12 @@ with st.sidebar:
                     else:
                         st.warning(f"Unsupported file type: {file.type}")
                         continue
-                    if text.strip():
-                        new_documents.append((file.name, text))
+                    
+                    # Clean the extracted text before adding
+                    cleaned_text = clean_text(text)
+
+                    if cleaned_text.strip():
+                        new_documents.append((file.name, cleaned_text))
                     else:
                         st.warning(f"No text could be extracted from {file.name}")
                 
