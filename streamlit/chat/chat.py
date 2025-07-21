@@ -1,8 +1,13 @@
-# This block is a workaround for a known issue with chromadb on Streamlit Cloud
-# It ensures that the correct version of sqlite3 is used.
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+# Workaround for ChromaDB/SQLite compatibility (works on both local and Streamlit Cloud)
+try:
+    import sys
+    import importlib
+    pysqlite3 = importlib.import_module('pysqlite3')
+    sys.modules['sqlite3'] = pysqlite3
+except ModuleNotFoundError:
+    # Fallback to default sqlite3 if pysqlite3 is not available (e.g., local dev)
+    pass
 
 import streamlit as st
 import openai
@@ -321,7 +326,7 @@ with st.sidebar:
                     if file.type == "text/plain":
                         text = str(file.read(), "utf-8")
                     elif file.type == "application/pdf":
-                        text = extract_text_from_pdf(file)
+                         text = extract_text_from_pdf(file)
                     elif file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
                         text = extract_text_from_docx(file)
                     else:
