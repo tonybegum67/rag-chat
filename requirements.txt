@@ -5,4 +5,5 @@ sentence-transformers
 PyPDF2
 python-docx
 tiktoken
-pysqlite3-binary
+anthropic
+pysqlite3-binary; sys_platform == 'linux'
