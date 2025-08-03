@@ -1,0 +1,2522 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    0vm6BVWZRGdChn_cMLfMo:
+      metadata:
+        description: ""
+        id: 0vm6BVWZRGdChn_cMLfMo
+        name: http_calling/iris_call
+      nodes:
+        '[BgeFuufH7_cJkYudwsHeL]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: POST
+            url: https://batest3.biz-architect.com/api/rest/export/json/pauger-55/Supreme%20Coffee/Current%20State?category=Capability%7CCapabilities
+            useBodyInput: true
+            useHeadersInput: true
+          outgoingConnections:
+            - json->"Graph Output" v2BjK-tBlRtLcIqqZw48j/value
+          visualData: 1424.7789808586056/550.2134710663331/564.6451698980181/1165//
+        '[HR5MT-2u7N-EFduWVuv1k]:toJson "To JSON"':
+          data:
+            indented: true
+          outgoingConnections:
+            - json->"Http Call" BgeFuufH7_cJkYudwsHeL/req_body
+          visualData: 979.7900509228775/735.7331509603898/205/1162//
+        '[_JerJhr4KZIbjw9tgnNFV]:object "Object"':
+          data:
+            body: ""
+            jsonTemplate: >-
+              {
+                  "Content-Type": "application/json",
+                  "Authorization": "Basic cGF1Z2VyLTU1X2FwaWFjY291bnRAYml6LWFyY2hpdGVjdC5jb206KmtmfGl+PSFVOUo+Uy9PQnYrY3Y="
+              }
+          outgoingConnections:
+            - output->"To JSON" nUqVlYITHba2vvudkkrAi/data
+          visualData: 537/379/236.40244835232647/1154//
+        '[nUqVlYITHba2vvudkkrAi]:toJson "To JSON"':
+          data:
+            indented: true
+          outgoingConnections:
+            - json->"Http Call" BgeFuufH7_cJkYudwsHeL/headers
+          visualData: 1001.5557120402406/385.3024313687331/205/1155//
+        '[qoAnbCYVIqK5oaBqtDHrP]:object "Object"':
+          data:
+            jsonTemplate: |-
+              {
+               "ProcessFolders": "true",
+               "IncludeTimestamp": "true",
+               "CompressJSON": "true",
+               "Fields": ["Name", "Description", "InternalId"]
+              }
+          outgoingConnections:
+            - output->"To JSON" HR5MT-2u7N-EFduWVuv1k/data
+          visualData: 537.1627877905214/680.4279643479608/230/1161//
+        '[v2BjK-tBlRtLcIqqZw48j]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 2119.66032828516/467.5830891936896/441.5096981309921/778//
+    AUv3ib8llZy20jaTMzMz5:
+      metadata:
+        description: ""
+        id: AUv3ib8llZy20jaTMzMz5
+        name: http_calling
+      nodes:
+        '[0XH4uv3xY2qszlqZO1Aze]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Join" PgYikNksx_8XHfR5YTCCR/input4
+          visualData: 2517.3938548280203/1632.6723296754872/280/153//
+        '[38t_sVOq4ckDCOUzneHq9]:text "Query (Text)"':
+          data:
+            text: "{{input}} I want to know what are the best courses for learning ai for
+              business architects"
+          outgoingConnections:
+            - output->"Body (Object)" lv76z95E6Heu4ZK--Z6ko/query
+          visualData: 937.9638844392973/529.750194600339/330/32//
+        '[3bacvVofryz5LQr6T9k-s]:text "URL (Text)"':
+          data:
+            text: https://google.serper.dev/scholar
+          outgoingConnections:
+            - output->"Http Call" Sy2h6JBUrdx2IT_uhjmrK/url
+          visualData: 1488.880443818137/1598.2545213236408/330/149//
+        '[5HfRMAhzlQhKQeLYula5s]:boolean "Autocorrect (Bool)"':
+          data:
+            jsonTemplate: ""
+            value: true
+          visualData: 935.7833280428024/956.1842838514634/327.75815517167257/32//
+        '[8iPaT8MzP3dAThztZopbU]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: POST
+            url: ""
+            useBodyInput: true
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Extract JSON" ZIwEH-jt4v0udqc9vVc1C/input
+          visualData: 2066.247463847997/582.3565450459671/280/94//
+        '[96fBFMWPntuxLPEFHy-CN]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: POST
+            url: ""
+            useBodyInput: true
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Extract JSON" lQ1aNlzjmnf3Bc-zxFE1K/input
+          visualData: 2063.9589186467056/1249.9345504312855/280/151//
+        '[B5cGOsHqqgkv50jX9lAub]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 1638.9569782102217
+            text: "#### Inputs"
+          visualData: 910.6011344928097/266/474.9628983901214/14//
+        '[JR_kDCrtamw7A5ahOQo63]:text "URL (Text)"':
+          data:
+            text: https://google.serper.dev/videos
+          outgoingConnections:
+            - output->"Http Call" 96fBFMWPntuxLPEFHy-CN/url
+          visualData: 1464.879940385458/1329.285682802599/330/150//
+        '[MI-J8LhpMlIFqwUy6wkaW]:context "Context"':
+          data:
+            dataType: string
+            id: serper_api_key
+            useDefaultValueInput: false
+          visualData: 938.9895254649382/371.2048634839088/330/32//
+        '[MSeOJCAMxznZwlYurGReU]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Join" PgYikNksx_8XHfR5YTCCR/input2
+          visualData: 2506.9979174766668/1003.242547354313/280/135//
+        '[PgYikNksx_8XHfR5YTCCR]:join "Join"':
+          data:
+            flatten: true
+            joinString: "\n"
+          outgoingConnections:
+            - output->"Text" p8rXSmF97EmtIvz3q-Ebg/input
+          visualData: 3144.61885746397/1088.0541407227092/180/145//
+        '[SBZC40sGeSJ6wqYacepRJ]:text "Locale (Text)"':
+          data:
+            text: en
+          visualData: 935.7833280428024/814.5454131003931/330/116//
+        '[Sy2h6JBUrdx2IT_uhjmrK]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: POST
+            url: ""
+            useBodyInput: true
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Extract JSON" 0XH4uv3xY2qszlqZO1Aze/input
+          visualData: 2059.107303639501/1561.0978829288615/280/147//
+        '[VhAlVIMg8QIpegHTzft9n]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"output" bdTPdopiFFnldruR8xOLT/input
+          visualData: 3926.4327926844976/1048.4634944060404/230/165//
+        '[YNqCGwCOr1RHIB-3kgUuM]:number "Results (Number)"':
+          data:
+            round: false
+            roundTo: 0
+            value: 10
+          visualData: 941.2746811071238/1247.521336859691/325.51194236051424/115//
+        '[ZIwEH-jt4v0udqc9vVc1C]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Join" PgYikNksx_8XHfR5YTCCR/input1
+          visualData: 2499.0900009874067/648.4927910014903/306.5321115766769/136//
+        '[_aPS0KhhkIPCrVrVukh0O]:text "Text"':
+          data:
+            text: >+
+              
+
+              {{input}}
+
+
+              Using the information that you have got from the search. create an
+              information set that includes the search, image, video and scholor
+              information for the user that brings all the important parts
+              together. Think slowly,
+
+
+              The images should be displayed as a sidebar
+
+
+          outgoingConnections:
+            - output->"Chat (Aidon)" VhAlVIMg8QIpegHTzft9n/prompt
+          visualData: 3155.75707151038/1413.5592766817008/330/155//
+        '[asbuoxWPb4yj5-fswo78s]:number "Page (Number)"':
+          data:
+            round: false
+            roundTo: 0
+            value: 1
+          visualData: 935.7833280428025/1090.8806128214198/325.51194236051424/32//
+        '[bdTPdopiFFnldruR8xOLT]:text "output"':
+          data:
+            text: "{{input}}"
+          visualData: 4284.259827259022/1098.4411406456898/330/159//
+        '[gotWVeC6FkEL_QQ_lbcWq]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: POST
+            url: ""
+            useBodyInput: true
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Extract JSON" MSeOJCAMxznZwlYurGReU/input
+          visualData: 2073.0360153512565/942.875275053497/280/64//
+        '[jujDZt_woOYIv2_7F4sB-]:text "URL (Text)"':
+          data:
+            text: https://google.serper.dev/search
+          outgoingConnections:
+            - output->"Http Call" 8iPaT8MzP3dAThztZopbU/url
+          visualData: 1480.5044692827344/450.6086587705353/330/47//
+        '[lQ1aNlzjmnf3Bc-zxFE1K]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Join" PgYikNksx_8XHfR5YTCCR/input3
+          visualData: 2523.4629227906853/1317.2600430435575/280/152//
+        '[lv76z95E6Heu4ZK--Z6ko]:object "Body (Object)"':
+          data:
+            body: ""
+            jsonTemplate: |-
+              {
+                "q":"{{query}}"
+                
+              }
+          outgoingConnections:
+            - output->"Http Call" 8iPaT8MzP3dAThztZopbU/req_body
+            - output->"Http Call" 96fBFMWPntuxLPEFHy-CN/req_body
+            - output->"Http Call" Sy2h6JBUrdx2IT_uhjmrK/req_body
+            - output->"Http Call" gotWVeC6FkEL_QQ_lbcWq/req_body
+          visualData: 1479.2231803826771/884.347502294799/230/57//
+        '[oHFT_eZGawsPPP5iSN9EP]:graphInput "Graph Input"':
+          data:
+            dataType: chat-message[]
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Query (Text)" 38t_sVOq4ckDCOUzneHq9/input
+          visualData: 474/507.46902124575115/330/163//
+        '[p8rXSmF97EmtIvz3q-Ebg]:text "Text"':
+          data:
+            text: |
+              
+              {{input}}
+          outgoingConnections:
+            - output->"Chat (Aidon)" VhAlVIMg8QIpegHTzft9n/systemPrompt
+          visualData: 3433.5802790365956/1091.8199857915145/330/162//
+        '[tYXGhcqloPvTA_CjelMjb]:object "Header (Object)"':
+          data:
+            jsonTemplate: |-
+              {
+                "X-API-KEY": "0504cd393645df7dc8a1c8d849a73a435f505799",
+                "Content-Type": "application/json"
+              }
+            text: ""
+          outgoingConnections:
+            - output->"Http Call" 8iPaT8MzP3dAThztZopbU/headers
+            - output->"Http Call" 96fBFMWPntuxLPEFHy-CN/headers
+            - output->"Http Call" Sy2h6JBUrdx2IT_uhjmrK/headers
+            - output->"Http Call" gotWVeC6FkEL_QQ_lbcWq/headers
+          visualData: 1463.473233690371/627.8167699149394/364.75639960764875/79//
+        '[uPDcVJe7Xx59obdFkpbX7]:text "URL (Text)"':
+          data:
+            text: https://google.serper.dev/images
+          outgoingConnections:
+            - output->"Http Call" gotWVeC6FkEL_QQ_lbcWq/url
+          visualData: 1465.065611099638/1128.0220601869623/330/140//
+        '[uysO9HW5pDjjpJQUbwMmW]:text "Country (Text)"':
+          data:
+            text: us
+          visualData: 935.7833280428024/672.0974809330107/330/117//
+        '[xSYsHkwYrVMaDw9zddQSn]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 1636.615400074693
+            text: "#### Create header + body content"
+          visualData: 1407.8417047884138/266.9700357757982/547.6460546611786/36//
+        '[zQ0wnDj8GqaB_m6DEwXnb]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 1636.2861891424575
+            text: "#### Fetch the data"
+          visualData: 1972.4896233067857/269.6578765240014/486.67078906776396/129//
+    KK2IyoS61qnhm5XF-V-yu:
+      metadata:
+        description: ""
+        id: KK2IyoS61qnhm5XF-V-yu
+        name: embeddings/Image_embeddings
+      nodes:
+        '[2qE-rUcGI0QP5hFPMVHCV]:text "Text"':
+          data:
+            text: |-
+              {{input}}
+              Tell me what this image is about
+          outgoingConnections:
+            - output->"Assemble Message" gMcl27rKq5fJIBHu17EB1/part2
+          visualData: 254.40422770182886/590.7418252700933/330/51//
+        '[HVgpKGIo6HAZpYTNp5H50]:image "Image"':
+          data:
+            data:
+              refId: pL-fKO9zU4ViioUUGpujs
+            mediaType: image/png
+            text: ""
+            useDataInput: false
+            useMediaTypeInput: false
+          outgoingConnections:
+            - image->"Assemble Message" gMcl27rKq5fJIBHu17EB1/part1
+          visualData: 262.223405392902/164.0597359447678/280/64/var(--node-color-5)/var(--node-color-5)
+        '[Ll6ED73i05EWNQApz2iVl]:appendToDataset "Append to Dataset"':
+          data:
+            datasetId: ZuFR5D9pH-0Baq95KO5GE
+          visualData: 2408.959070015386/347.0485733916907/280/63//
+        '[gMcl27rKq5fJIBHu17EB1]:assembleMessage "Assemble Message"':
+          data:
+            toolCallId: ""
+            type: user
+            useToolCallIdInput: false
+            useTypeInput: false
+          outgoingConnections:
+            - message->"Chat (Aidon)" h1WHVQJxnHXfISprfn4UG/prompt
+          visualData: 804.381700334828/373.97151706714607/280/62//
+        '[h1WHVQJxnHXfISprfn4UG]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 16000
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Append to Dataset" Ll6ED73i05EWNQApz2iVl/data
+            - response->"Get Embedding" y3D3ZIpg481s3BsIWjjdM/input
+          visualData: 1286.0994972259566/297.36380161538165/230/61//
+        '[vQIWw0LzXeAPE_pvUtPBe]:text "Text"':
+          data:
+            text: abc_episode_3
+          outgoingConnections:
+            - output->"Append to Dataset" Ll6ED73i05EWNQApz2iVl/id
+          visualData: 1755.2137161843912/516.6454259711669/330/58/var(--node-color-5)/var(--node-color-5)
+        '[y3D3ZIpg481s3BsIWjjdM]:getEmbedding "Get Embedding"':
+          data:
+            integration: openai
+            useIntegrationInput: false
+          outgoingConnections:
+            - embedding->"Append to Dataset" Ll6ED73i05EWNQApz2iVl/embedding
+          visualData: 1765.0877432172133/745.6999489200746/280/57//
+    N2Dh_oV1zMofx8gmooCZN:
+      metadata:
+        description: ""
+        id: N2Dh_oV1zMofx8gmooCZN
+        name: markdown/markdown_form
+      nodes:
+        '[-LhSPNNc8sIB4C_ru9SlY]:match "Match"':
+          data:
+            cases:
+              - YES
+              - NO
+              - Approved
+          outgoingConnections:
+            - unmatched->"output" 9Q_02mh4cxf9fhidjn2pc/input
+          visualData: 1857.3893712349513/743.0626250765403/280/725//
+        '[9Q_02mh4cxf9fhidjn2pc]:text "output"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" SlKWM2sSFsY3EbBrr3D_r/value
+          visualData: 1862.8549870404959/520.6841374163339/330/725/var(--node-color-7)/var(--node-color-7)
+        '[ELsLci1rejY3j2QD1v76J]:comment "Comment"':
+          data:
+            backgroundColor: rgba(148,228,227,0.44)
+            color: rgba(48,40,40,1)
+            height: 1007.6485465822657
+            text: "### User Prompting and Discovery Phase"
+          visualData: 267/129/2463.7354249907066/725//
+        '[InKKYDlw-PwLYTdHIw-t4]:graphInput "Graph Input"':
+          data:
+            dataType: chat-message[]
+            id: input
+            promptText: ""
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Assemble Prompt" QtfPRMVLvJXy1n9o2W20R/message2
+          visualData: 416.0826404194562/867.7428546247702/330/725//
+        '[QtfPRMVLvJXy1n9o2W20R]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Chat (Aidon)" eFZc1lXIHpzWDotQcl2Du/prompt
+          visualData: 917.9863447441157/452.8876598073896/280/725//
+        '[SlKWM2sSFsY3EbBrr3D_r]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 2284.178941441325/419.40681434228077/330/725//
+        '[W3miWOzlubAvJhbZ1ES6I]:prompt "FinalForms"':
+          data:
+            enableFunctionCall: false
+            promptText: >+
+              # Assistant Instructions:
+
+
+              Your name is Ainne. You assist the user in a **two-step process**
+              to create a Knowledge Brief. Follow the steps carefully and **do
+              not proceed to the next step until the user has confirmed**.
+
+
+
+              ## **Step 1: Validate User Expectations and Understand the Case**
+
+
+              **Instructions for Step 1:**
+
+
+              - **Initiate the Conversation and Provide a Form for User Input:**
+
+                - Begin with a warm greeting and express your eagerness to understand their situation more thoroughly.
+                - Present the user with a structured and stylish form to fill out, which includes essential clarifying questions to gather comprehensive information about their issue.
+                - if a file is included ensure to analyse this as part of your assessment.
+
+              **Example Greeting:**
+
+
+              "Hello! I'm Ainne, and I'm here to assist you in creating a
+              Knowledge Brief. To start, I’d love to understand your situation
+              better. Please provide more details:"
+
+
+              **Styled Form:**
+
+              <form data-action="postFormReply" style="background-color:
+              #595f7d; color: white; width: 100%;" class="rounded-md p-6
+              shadow-md mx-auto"> 
+                <div class="text-center mb-4">
+                   <h2 class="text-2xl font-bold text-white">Tell me more</h2>
+                   <p class="text-white">The Knowledge Brief consists of 3 stages. Provide information that will help me give you the best response possible. You should also include #files and !tools in your response to get the very best knowledge brief:</p>
+                </div>
+                <div class="grid gap-4">
+                   <div class="grid grid-cols-1 gap-4">
+                    <div>
+                      <label for="context" class="text-sm font-semibold leading-none mb-2 text-white">Context:</label>
+                      <textarea 
+                          id="context" 
+                          name="context" 
+                          required 
+                          class="border border-gray-300 bg-white text-black placeholder:text-gray-400 flex h-20 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          placeholder="Provide context so that the scale and value of the change can be addressed..."></textarea>
+                    </div>
+                    <div>
+                      <label for="main_issue" class="text-sm font-semibold leading-none mb-2 text-white">Main Issue or Need:</label>
+                      <textarea 
+                          id="main_issue" 
+                          name="main_issue" 
+                          required 
+                          class="border border-gray-300 bg-white text-black placeholder:text-gray-400 flex h-20 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          placeholder="Please describe your main issue or need..."></textarea>
+                    </div>
+                    <div>
+                      <label for="goals" class="text-sm font-semibold leading-none mb-2 text-white">Goals or Desired Outcomes:</label>
+                      <textarea 
+                          id="goals" 
+                          name="goals" 
+                          required 
+                          class="border border-gray-300 bg-white text-black placeholder:text-gray-400 flex h-20 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          placeholder="What are your goals or desired outcomes?"></textarea>
+                    </div>
+                    <div>
+                      <label for="stakeholders" class="text-sm font-semibold leading-none mb-2 text-white">Stakeholders Involved:</label>
+                      <textarea 
+                          id="stakeholders" 
+                          name="stakeholders" 
+                          required 
+                          class="border border-gray-300 bg-white text-black placeholder:text-gray-400 flex h-20 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          placeholder="Who are the stakeholders involved?"></textarea>
+                    </div>
+                    <div>
+                      <label for="challenges" class="text-sm font-semibold leading-none mb-2 text-white">Constraints or Challenges:</label>
+                      <textarea 
+                          id="challenges" 
+                          name="challenges" 
+                          required 
+                          class="border border-gray-300 bg-white text-black placeholder:text-gray-400 flex h-20 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          placeholder="What constraints or challenges are you facing?"></textarea>
+                    </div>
+                   </div>
+                   <div class="flex justify-center"> 
+                    <button type="submit" style="background-color: #007BFF;" class="text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 px-4 py-2 rounded-md transition duration-200">
+                      Submit my Information
+                    </button>
+                   </div>
+                </div>
+              </form>
+
+               **Wait for the User's Response:**
+
+                - Do not proceed until the user has provided the requested information.
+
+              **Summarize Understanding:**
+
+
+              - After the user responds, restate the key points they have shared
+              in the form below to confirm your understanding. You should expand
+              on what the user has written to provide more clarity. Style
+              results within the form as bullet points and do not use markdown. 
+
+              - ALL RESPONSE CONTENT to be placed in the styled response form.
+
+
+              **Styled Response:**
+
+
+              <form data-action="postFormReply" style="background-color:
+              #595f7d; width: 100%;" class="rounded-md p-6 shadow-md"> <!--
+              Confirmation form -->
+                   <h2 class="text-2xl font-bold text-white text-center mb-4">Confirm Your Submission</h2>
+                   <p class="text-white">[summarise and expand on the key points]</p>
+                   <label for="additional_info" class="text-sm font-semibold leading-none mb-2 text-white">Additional Information:</label>
+                   <textarea id="additional_info" name="additional_info" class="border border-gray-300 bg-white text-black placeholder:text-gray-400 flex h-20 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" placeholder="Any additional information you want to provide..."></textarea>
+                   <div>
+                    <input type="checkbox" id="approved" name="approved" />
+                    <label for="approved">I agree and approve</label>
+                   </div>
+                <div class="flex flex-col mt-4"> <!-- Stacked buttons -->
+                    <button type="submit" name="action" value="approved" style="background-color: #007BFF;" class="text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 px-4 py-2 rounded-md transition duration-200">
+                          Submit
+                    </button>
+                </div>
+              </form>
+
+
+              ### **Confirm Agreement to Proceed:**
+
+
+              - **Instructions:**
+
+                - **If the user clicks "I Approve":**
+
+                  - Proceed to **Step 2** and create the Knowledge Brief.
+
+                - **If the user clicks "Request More Information":**
+
+                  - Collect any additional information provided in the "Additional Information" field.
+                  - Update your summary with this new information.
+                  - Expand on the content
+                  - Present the confirmation form again for the user's approval.
+
+              ---
+
+
+              ## **Step 2: Create the Knowledge Brief**
+
+
+              ### **Instructions for Step 2:**
+
+
+              - **Begin Creating the Knowledge Brief:**
+
+                - Once the user has confirmed by clicking **"I Approve,"** proceed to create the Knowledge Brief.
+                - **Include "Approved" in the title of the Knowledge Brief.**
+                - Structure the Knowledge Brief according to the sections outlined below.
+                - Provide clear, concise, and relevant information based on the user's inputs.
+
+              ---
+
+
+              # **Knowledge Brief – Approved**
+
+
+              ## **1. Introduction**
+
+
+              **Purpose of the Brief:**
+
+
+              The purpose of this Knowledge Brief is to present the strategic
+              and tactical steps behind the proposed change to address **[the
+              issue]**, thereby achieving **[desired outcomes]**. This document
+              aims to provide clarity to all stakeholders involved.
+
+
+              **Context:**
+
+
+              Provide background information about the issue:
+
+
+              - How was the issue identified?
+
+              - Why is it important to address now?
+
+              - Any relevant history or previous attempts to resolve it.
+
+
+              ## **2. Problem Statement**
+
+
+              - **Clearly define the problem or need** that requires attention.
+
+              - Explain how it affects the business and stakeholders.
+
+              - Include any **quantifiable data** to illustrate its impact
+              (e.g., financial losses, decreased customer satisfaction).
+
+
+              ## **3. Objectives**
+
+
+              Outline the specific goals and desired outcomes:
+
+
+              - **Objective 1:** [Specific, measurable goal.]
+
+              - **Objective 2:** [Another specific goal.]
+
+              - **Objective 3:** [Additional goal.]
+
+
+              ## **4. Stakeholder Analysis**
+
+
+              Identify key stakeholders:
+
+
+              - **Stakeholder A:**
+                - **Role:** [Role in the organization.]
+                - **Interests/Concerns:** [Their perspective and how they are affected.]
+              - **Stakeholder B:**
+                - **Role:** [Role.]
+                - **Interests/Concerns:** [Details.]
+              - *(Include all relevant stakeholders.)*
+
+
+              ## **5. Proposed Solution**
+
+
+              **Strategic Steps:**
+
+
+              - **Step 1:** [High-level strategy to address the problem.]
+
+              - **Step 2:** [Next strategic action.]
+
+              - **Step 3:** [Additional steps as needed.]
+
+
+              **Tactical Actions:**
+
+
+              - **Action 1:** [Specific tasks or initiatives.]
+
+              - **Action 2:** [Details.]
+
+              - **Action 3:** [Details.]
+
+
+              **Justification:**
+
+
+              - Explain why this solution is appropriate.
+
+              - How does it address the problem effectively?
+
+              - Alignment with business objectives and stakeholder needs.
+
+
+              ## **6. Benefits and Value**
+
+
+              Highlight the advantages:
+
+
+              - **Benefit 1:** [Improved efficiency, cost savings, etc.]
+
+              - **Benefit 2:** [Enhanced customer satisfaction, competitive
+              advantage, etc.]
+
+              - **Benefit 3:** [Other benefits.]
+
+
+              Explain how these benefits provide value to stakeholders and the
+              organization.
+
+
+              ## **7. Implementation Plan**
+
+
+              Provide an overview of how the solution will be implemented:
+
+
+              - **Timeline:** [Estimated schedule for implementation phases.]
+
+              - **Resources Needed:** [Personnel, technology, budget
+              requirements.]
+
+              - **Responsibilities:** [Who is responsible for each part.]
+
+
+              ## **8. Risks and Mitigations**
+
+
+              Identify potential risks and propose mitigation strategies:
+
+
+              - **Risk 1:** [Description of risk.]
+                - **Mitigation:** [How to address or prevent the risk.]
+              - **Risk 2:** [Description.]
+                - **Mitigation:** [Details.]
+              - **Risk 3:** [Description.]
+                - **Mitigation:** [Details.]
+
+              ## **9. Conclusion**
+
+
+              **Summary of Key Points:**
+
+
+              - Recap the problem, proposed solution, and expected benefits.
+
+              - Emphasize how the solution aligns with objectives and
+              stakeholder needs.
+
+
+              **Call to Action:**
+
+
+              - Encourage stakeholders to review the proposed plan.
+
+              - Invite feedback or approval to advance to the next stage.
+
+
+              ---
+
+
+              **Note for Assistant:**
+
+
+              - **Do not proceed to creating the Knowledge Brief until the user
+              has confirmed in Step 1.**
+
+              - Use professional and clear language throughout the interaction.
+
+              - Ensure the Knowledge Brief is tailored based on the user's
+              inputs.
+
+              - Include "Approved" in the title as per instructions.
+
+
+              ---
+
+
+              **Next Steps for Assistant:**
+
+
+              - After completing Step 1 and receiving the user's confirmation,
+              proceed to Step 2.
+
+            type: assistant
+            useTypeInput: false
+          description: Submitting data from form one to form 2 so that the user can edit
+            the data and approval button triggers the match
+          outgoingConnections:
+            - output->"Assemble Prompt" QtfPRMVLvJXy1n9o2W20R/message1
+          visualData: 414.25909065009637/352.2561738452798/280/725/var(--node-color-4)/var(--node-color-4)
+        '[amQqMEvsF8Toai7LPyBkG]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: >-
+              {{input}}
+
+
+
+              ## Introduction to The Knowledge Brief
+
+
+              While having a set of requirements is essential to the project, we
+              also want stakeholders to understand why the change exists, why
+              the needs are important, and how this information may help them so
+              that they can make great decisions. Without a firm fundamental
+              understanding of the "why" and "what" we are doing in a change
+              project, we risk not reaching the desired result. Statistics show
+              that, despite the best intentions, projects continue to fail, and
+              one of the leading causes is inadequate requirements. Therefore,
+              **the purpose of The Knowledge Brief is to present** **the
+              structure of strategic** **and tactical steps behind the proposed
+              change strategy** or action to solve a need within a business thus
+              providing better clarity to all stakeholders.
+
+
+              ## What do business analysts do?
+
+
+              Have you ever been in a position where you were going out for the
+              evening and meeting new people? Eventually, the conversation will
+              turn to a professional topic, and you will mention that you are a
+              "Business Analyst." This all appears harmless enough, but we all
+              know that ultimately you'll be asked, **"What do business analysts
+              do?"** It will be challenging and tricky to explain. This raises
+              some challenges...
+
+
+              - How would we communicate what we do to individuals in a
+              straightforward manner?
+
+              - How can we understand the roles ourselves?
+
+              - How do we describe what we have done when we change jobs or
+              industries?
+
+              - How do we genuinely comprehend what we are expected to perform?
+
+              - What does a business analyst do?
+
+              - And why is it important?
+
+
+              I believe it is critical to recognise that there is a structure
+              and foundation within which we operate as business analysts. It's
+              also vital to understand that it's pretty predictable and
+              straightforward. As I introduce you to The Knowledge Brief, I'll
+              use an **investigative journalist metaphor** to explain the role
+              of a business analyst and what we do.
+
+
+              ## Welcome to The Knowledge Brief
+
+
+              ![The Knowledge
+              Brief](https://app.dropinblog.com/uploaded/blogs/34243617/files/The_Knowledge_Brief_for_Business_Analysts.png)
+
+
+              **So, what exactly is the knowledge brief? This is, for all
+              intents and purposes, simply a tool.** As a result, it's not
+              overly fancy or complicated. It could be described as a simplified
+              business case or business requirements document template for
+              business analysts. In the past, business analysts were frequently
+              required to create these large documents that in many cases
+              stakeholder wouldn't read. And this is a significant challenge
+              because, as a business analyst, you want others to value what you
+              do. So, while having a set of requirements is critical to the
+              project, we also want people to understand why the project exists,
+              why the requirements matter, and the value of this information.
+
+
+              **The goal is to keep things as simple as possible.** And the
+              reason we keep it simple is because we know we work with numerous
+              stakeholders who have different information needs. We don't only
+              work with one type of stakeholder. We work with C-level
+              executives, end users, and customers, as well as sponsors, project
+              managers, and business architects. And we collaborate with a
+              diverse group of people to not only record requirements, but also
+              to truly comprehend and analyse what these changes might be. So I
+              wanted The Knowledge Brief to be simple but informative. As BAs,
+              our intention is to present the stakeholders with clarity, not
+              certainty, but clarity. And clarity is basically about ensuring
+              that you have what you need to make good decisions. It's simple.
+              It's self-evident.
+
+
+              When we talk about requirements, we often talk about how it needs
+              to be atomic, concise, clear. As a result, every aspect of The
+              Knowledge Brief must be tailored to these principles. It's almost
+              like completing a whole set of requirements while also doing your
+              background statement and various other components in your
+              Knowledge Brief, which we'll explore soon, using similar
+              principles.
+
+
+              As previously stated, The Knowledge Brief is merely a tool for
+              condensing structured information while remaining true to the
+              value of the information and delivering it to the audience in a
+              specified manner. Again, you do not have to provide everything
+              within The Knowledge Brief; it is up to you and the stakeholders
+              to determine the depth of information. It's formatted as a
+              dashboard that can be printed or used as a presentation. For
+              instance, instead of a paper, we can present numerous slides or
+              just one, depending on your audience.
+
+
+              ## Meet your investigative journalist
+
+
+              ![Investigative
+              Journalist](https://app.dropinblog.com/uploaded/blogs/34243617/files/The_Knowledge_Brief_Investigative_Journalist.png)
+
+
+              Now, consider yourself an **investigative journalist**, and I
+              frequently say this about business analysts: what you're actually
+              doing is gathering information from multiple sources,
+              investigating and evaluating it, and compiling it into a package.
+              And so, effectively, what you're doing here is crafting a story
+              out of a collection of facts. As a result, The Knowledge Brief
+              becomes your instrument for conducting research, gathering crucial
+              information, and presenting your findings to your audience in a
+              clear and organised manner.
+
+
+              In our 12-part blog series, we will explore the tactics required
+              in a change in an open, understandable manner. So you can
+              experiment by putting together your own Knowledge Brief. This is
+              intended to assist you as a BA; it is not intended to dictate
+              exactly how you should do it, but it does help answer the
+              question. **"What do business analysts do?"** The Knowledge Brief
+              has the potential to spark insight into genuine business change or
+              transformation, and it is always contextual. So what you're
+              attempting to do here is establish context, basic understanding,
+              clarity on what the project is, and conciseness so that anyone you
+              talk to understands the value of the project at hand. So,
+              **welcome to The Knowledge Brief.** I am delighted that you have
+              viewed this brief summary (and considered the role of an
+              investigative journalist) as you continue through the various
+              sections of your Knowledge Brief. Happy Learning!
+
+
+              ## Key learnings
+
+
+              1. What do business analysts do?
+
+              2. What exactly is the knowledge brief?
+
+              3. While having a set of requirements is critical to the project,
+              we also want people to understand why the project exists, why the
+              requirements matter, and explain the value of these requirements.
+
+              4. The Knowledge Brief is merely a tool for condensing information
+              while remaining true to the value of the information and
+              delivering it to the audience in a relevant manner.
+
+              5. As a result, the knowledge brief becomes your instrument for
+              conducting research, gathering crucial information, and presenting
+              your findings to your audience in a clear and organised manner.
+
+
+              I am delighted that you have viewed this brief summary and
+              encourage you to continue through the various sections of your
+              Knowledge Brief.
+
+
+              ## Summary
+
+
+              **The purpose of The Knowledge Brief is to present the strategic
+              and tactical steps behind the proposed change strategy** or action
+              to solve a need within a business, thus providing better clarity
+              to all stakeholders. Therefore, our goal as BAs is to provide
+              clarity to stakeholders. Clarity is about having just what you
+              need to make good decisions and move your change project forward.
+              The Knowledge Brief is a mechanism to achieve this by condensing
+              information while maintaining the information quality. It's simple
+              and self-explanatory. It's a dashboard that may be printed or used
+              as a presentation. In our 10-part series, we will look at The
+              Knowledge Brief and how it might help you achieve better outcomes
+              on your change projects.
+
+
+              &nbsp;
+
+
+              &copy; The Knowledge Brief is a product of Agora Insights Ltd.
+              Author Deirdre Caren. All rights are reserved.
+            type: system
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chat (Aidon)" eFZc1lXIHpzWDotQcl2Du/systemPrompt
+          visualData: 1336.5816413687862/242.12210338301793/280/725/var(--node-color-2)/var(--node-color-2)
+        '[eFZc1lXIHpzWDotQcl2Du]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: true
+            headers: []
+            maxTokens: 16000
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            promptText: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Match" -LhSPNNc8sIB4C_ru9SlY/input
+            - response->"Match" -LhSPNNc8sIB4C_ru9SlY/value
+          visualData: 1430.575120371379/732.2072600499371/230/725//
+        '[ogxbygDk0lBxvLlhr_oAz]:graphInput "Graph Input"':
+          data:
+            dataType: gpt-function[]
+            id: toolSchemas
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat (Aidon)" eFZc1lXIHpzWDotQcl2Du/toolSchemas
+          visualData: 902.308569201183/892.8254155936179/330/725//
+        '[t01htkoDlPU5PJZxvCVzc]:graphInput "Graph Input"':
+          data:
+            dataType: gpt-function[]
+            id: tools
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat (Aidon)" eFZc1lXIHpzWDotQcl2Du/functions
+          visualData: 902.122706170921/687.1558023653218/330/725//
+    U166nPyzQP3-7Fhi0jwhB:
+      metadata:
+        description: ""
+        id: U166nPyzQP3-7Fhi0jwhB
+        name: embeddings/embed_array
+      nodes:
+        '[-qskCOrK2gUiUr80qz-QS]:text "Text"':
+          data:
+            text: >-
+              US21-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Brand Performance
+              Report	Brand Performance Monitoring	Secondary	Regularly measuring
+              and analyzing brand equity, awareness, and perception	Provides
+              insights for brand strategy adjustment and improvement.	Brand
+              Equity, Brand Awareness	Marketing Team	Brand Manager	As a brand
+              manager, I need to regularly monitor our brand performance to make
+              informed strategic decisions.
+
+              US22-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Customer Surveys	Brand
+              Performance Monitoring	Secondary	Regularly measuring and analyzing
+              brand equity, awareness, and perception	Provides insights for
+              brand strategy adjustment and improvement.	Brand Equity, Brand
+              Awareness	Marketing Team	Brand Manager	As a brand manager, I need
+              to regularly monitor our brand performance to make informed
+              strategic decisions.
+
+              US23-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Brand Performance
+              Report	Brand Performance Monitoring	Secondary	Regularly measuring
+              and analyzing brand equity, awareness, and perception	Provides
+              insights for brand strategy adjustment and improvement.	Brand
+              Equity, Brand Awareness	Marketing Team	Franchise Owner	As a
+              franchise owner, I need to understand our brand performance to
+              align my operations with the overall brand strategy.
+
+              US24-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Customer Surveys	Brand
+              Performance Monitoring	Secondary	Regularly measuring and analyzing
+              brand equity, awareness, and perception	Provides insights for
+              brand strategy adjustment and improvement.	Brand Equity, Brand
+              Awareness	Marketing Team	Franchise Owner	As a franchise owner, I
+              need to understand our brand performance to align my operations
+              with the overall brand strategy.
+
+              US25-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Brand Performance
+              Report	Brand Performance Monitoring	Secondary	Regularly measuring
+              and analyzing brand equity, awareness, and perception	Provides
+              insights for brand strategy adjustment and improvement.	Brand
+              Equity, Brand Awareness	Marketing Team	Market Researcher	As a
+              market researcher, I want to measure brand awareness to understand
+              our position in the market.
+
+              US26-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Customer Surveys	Brand
+              Performance Monitoring	Secondary	Regularly measuring and analyzing
+              brand equity, awareness, and perception	Provides insights for
+              brand strategy adjustment and improvement.	Brand Equity, Brand
+              Awareness	Marketing Team	Market Researcher	As a market researcher,
+              I want to measure brand awareness to understand our position in
+              the market.
+
+              US27-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Brand Performance
+              Report	Brand Performance Monitoring	Secondary	Regularly measuring
+              and analyzing brand equity, awareness, and perception	Provides
+              insights for brand strategy adjustment and improvement.	Brand
+              Equity, Brand Awareness	Marketing Team	Marketing Manager	As a
+              marketing manager, I want to use brand performance data to
+              optimize our marketing efforts.
+
+              US28-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Customer Surveys	Brand
+              Performance Monitoring	Secondary	Regularly measuring and analyzing
+              brand equity, awareness, and perception	Provides insights for
+              brand strategy adjustment and improvement.	Brand Equity, Brand
+              Awareness	Marketing Team	Marketing Manager	As a marketing manager,
+              I want to use brand performance data to optimize our marketing
+              efforts.
+
+              US29-T1-L2-C10	Tier 1	Level 2	Brand Performance Monitoring	Brand
+              Management	Brand Performance Monitoring	-	Brand Performance
+              Report	Brand Performance Monitoring	Secondary	Regularly measuring
+              and analyzing brand equity, awareness, and perception	Provides
+              insights for brand strategy adjustment and improvement.	Brand
+              Equity, Brand Awareness	Marketing Team	PR Manager	As a PR manager,
+              I need to understand our brand perception to shape our public
+              communications.
+          visualData: 42.50931594832173/-196.15796845139806/330/41//
+        '[2qSbF-PHLXh5tIndm7ypT]:split "Split Text"':
+          data:
+            delimiter: \n
+            regex: false
+          outgoingConnections:
+            - splitString->"Array" EY9SELoXyhLPJBVfGWFE_/input1
+          visualData: 620.3841087606799/456.3930812204942/280/2//
+        '[6sbg_nyNRFUayvN4lvWYp]:text "Text"':
+          data:
+            text: "{{input}}"
+          isSplitRun: true
+          outgoingConnections:
+            - output->"Append to Dataset" t-24a9qIBdkF2BZLP9w52/id
+          splitRunMax: 10000
+          visualData: 2367.3501348668815/225.88746374470156/330/29//
+        '[EY9SELoXyhLPJBVfGWFE_]:array "Array"':
+          data:
+            flatten: true
+            flattenDeep: false
+          isSplitRun: true
+          outgoingConnections:
+            - output->"Text" wMTsqOz2uW7yN2SVZanAI/input
+          splitRunMax: 10000
+          visualData: 1032.0857654737426/451.4391779928741/230/5//
+        '[TOOCs3ljlaYsFyON8QRfj]:text "Text"':
+          data:
+            text: >-
+              US1-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Brand Manager	As a Brand Manager, I want to
+              ensure the brand guidelines are followed across all franchises so
+              that we can maintain brand consistency.
+
+              US2-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Brand Manager	As a Brand Manager, I want to
+              ensure the brand guidelines are followed across all franchises so
+              that we can maintain brand consistency.
+
+              US3-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Customer Service Representative	As a Customer
+              Service Representative, I want to embody the brand values in all
+              customer interactions to uphold the company's reputation.
+
+              US4-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Customer Service Representative	As a Customer
+              Service Representative, I want to embody the brand values in all
+              customer interactions to uphold the company's reputation.
+
+              US5-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Digital Designer	As a Digital Designer, I
+              want to use the company logo correctly in my designs to maintain
+              brand identity.
+
+              US6-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Digital Designer	As a Digital Designer, I
+              want to use the company logo correctly in my designs to maintain
+              brand identity.
+
+              US7-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Executive	As an Executive, I want to monitor
+              brand performance metrics across all franchises to understand the
+              value and impact of our brand.
+
+              US8-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Executive	As an Executive, I want to monitor
+              brand performance metrics across all franchises to understand the
+              value and impact of our brand.
+
+              US9-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Franchise Owner	As a Franchise owner, I want
+              to have access to the latest brand guidelines so that my franchise
+              aligns with the global brand.
+
+              US10-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Franchise Owner	As a Franchise owner, I want
+              to have access to the latest brand guidelines so that my franchise
+              aligns with the global brand.
+
+              US11-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Marketing Executive	As a Marketing executive,
+              I want to implement strategies that communicate the brand value
+              effectively to customers.
+
+              US12-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Marketing Executive	As a Marketing executive,
+              I want to implement strategies that communicate the brand value
+              effectively to customers.
+
+              US13-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Product Manager	As a Product Manager, I want
+              to ensure all our products reflect the brand's values and quality
+              standards.
+
+              US14-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Product Manager	As a Product Manager, I want
+              to ensure all our products reflect the brand's values and quality
+              standards.
+
+              US15-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Quality Assurance Specialist	As a Quality
+              Assurance Specialist, I want to check that all product packaging
+              adheres to our brand guidelines.
+
+              US16-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Quality Assurance Specialist	As a Quality
+              Assurance Specialist, I want to check that all product packaging
+              adheres to our brand guidelines.
+
+              US17-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Sales Manager	As a Sales Manager, I want to
+              leverage our brand value to boost sales across all franchises.
+
+              US18-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Sales Manager	As a Sales Manager, I want to
+              leverage our brand value to boost sales across all franchises.
+
+              US19-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Brand Guidelines	Brand Management	Primary	Upholding
+              and communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Training Manager	As a Training Manager, I
+              want to incorporate the company's brand values into all training
+              materials and sessions.
+
+              US20-T1-L1-C1	Tier 1	Level 1	Brand Management	Brand
+              Management	-	-	Company Logo	Brand Management	Primary	Upholding and
+              communicating the brand value of Supreme Coffee across all
+              franchises This includes company 	Ensures a unified and
+              recognizable brand across all franchises.	Global Brand, Product
+              Brand	Marketing Team	Training Manager	As a Training Manager, I
+              want to incorporate the company's brand values into all training
+              materials and sessions.
+          outgoingConnections:
+            - output->"Split Text" 2qSbF-PHLXh5tIndm7ypT/string
+          visualData: 42.50931594832184/234.09937762723717/330/42//
+        '[qTvbGUIC0H8c8YJOU3V2F]:getEmbedding "Get Embedding"':
+          data:
+            integration: openai
+            useIntegrationInput: false
+          isSplitRun: true
+          outgoingConnections:
+            - embedding->"Append to Dataset" t-24a9qIBdkF2BZLP9w52/embedding
+          splitRunMax: 10000
+          visualData: 2167.1619642765645/685.8023090199288/280/36//
+        '[t-24a9qIBdkF2BZLP9w52]:appendToDataset "Append to Dataset"':
+          data:
+            datasetId: JaCOrY41oJ5_samGcfvZX
+          isSplitRun: true
+          splitRunMax: 10000
+          visualData: 2899.703230037513/448.5926362525268/280/35//
+        '[wMTsqOz2uW7yN2SVZanAI]:text "Text"':
+          data:
+            text: "{{input}}"
+          isSplitRun: true
+          outgoingConnections:
+            - output->"Append to Dataset" t-24a9qIBdkF2BZLP9w52/data
+            - output->"Extract Regex" wUvQDLOBsaOAyHJKZ82sr/input
+            - output->"Get Embedding" qTvbGUIC0H8c8YJOU3V2F/input
+          splitRunMax: 10000
+          visualData: 1420.9997319211736/465.3507568457667/330/6//
+        '[wUvQDLOBsaOAyHJKZ82sr]:extractRegex "Extract Regex"':
+          data:
+            errorOnFailed: false
+            regex: ^(.*?)(\t|$)
+            useRegexInput: false
+          isSplitRun: true
+          outgoingConnections:
+            - output1->"Text" 6sbg_nyNRFUayvN4lvWYp/input
+          splitRunMax: 10000
+          visualData: 1893.476357562945/226.6969193539109/280/7//
+    XW2-3amXLWfyGTVuMg3-8:
+      metadata:
+        description: ""
+        id: XW2-3amXLWfyGTVuMg3-8
+        name: images/Images_hugging_face
+      nodes:
+        '[-jPwy620QoyC5AGFXH-ap]:graphInput "Graph Input"':
+          data:
+            dataType: chat-message[]
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat (Aidon)" sOk3yX93KdgZ-cj4D33sR/prompt
+          visualData: 513/662.689102344856/330/314//
+        '[OtzKh4JfbpIzNXgPMtBsp]:text "Text"':
+          data:
+            text: "{{input}} "
+          outgoingConnections:
+            - output->"HF Image" whY27O4ZUa2IoHrexAmAJ/prompt
+          visualData: 1423.5101431279804/675.3469944043743/330/320//
+        '[QATnCB1-5HtU3PSLuPCjm]:imagetoMD "Image To Markdown"':
+          data:
+            mediaType: image/png
+            useDataInput: true
+            useMediaTypeInput: false
+          outgoingConnections:
+            - imageMarkdown->"output" aonVgEHKoDNCZc8czuuva/value
+          visualData: 2423.94916379362/653.8681811161275/205/334//
+        '[Y-3-fvYqz0uZMlSgYfO4a]:graphInput "Graph Input"':
+          data:
+            dataType: gpt-function[]
+            id: toolSchemas
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat (Aidon)" sOk3yX93KdgZ-cj4D33sR/toolSchemas
+          visualData: 521.7461744409452/1066.8727202038658/330/312//
+        '[aonVgEHKoDNCZc8czuuva]:graphOutput "output"':
+          data:
+            dataType: string[]
+            id: output
+          visualData: 2779.7652243729954/660.4530874539519/330/330//
+        '[gUtCYvLeWPn48hsdS6y9g]:text "Text"':
+          data:
+            text: |-
+              {{input}} 
+              Keep the prompt short and clear so that we have an image prompt
+          outgoingConnections:
+            - output->"Chat (Aidon)" sOk3yX93KdgZ-cj4D33sR/systemPrompt
+          visualData: 516.1322377752556/375/330/313//
+        '[iAzjHiWbmjfKxAr_z-Glx]:graphInput "Graph Input"':
+          data:
+            dataType: gpt-function[]
+            id: tools
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat (Aidon)" sOk3yX93KdgZ-cj4D33sR/functions
+          visualData: 528.8631274891954/879.3273880383035/330/312//
+        '[sOk3yX93KdgZ-cj4D33sR]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: true
+            maxTokens: 16000
+            model: gpt-4o-mini
+            overrideMaxTokens: 120000
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" OtzKh4JfbpIzNXgPMtBsp/input
+          visualData: 1046.4069482642453/626.3953678238365/230/36//
+        '[whY27O4ZUa2IoHrexAmAJ]:textToImageHuggingFace "HF Image"':
+          data:
+            guidanceScale: 40
+            height: 512
+            model: openfree/flux-chatgpt-ghibli-lora
+            negativePrompt: ""
+            numInferenceSteps: 25
+            width: 512
+          outgoingConnections:
+            - output->"Image To Markdown" QATnCB1-5HtU3PSLuPCjm/data
+          visualData: 1888.912467261789/676.4836133269935/419/331//
+    iKAquY6IIoOby2Ab3VS_j:
+      metadata:
+        description: ""
+        id: iKAquY6IIoOby2Ab3VS_j
+        name: chunking/chuncking
+      nodes:
+        '[1GkHCnaeK7X4QTC_1eLT3]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1600
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - all-messages->"Text" CDt69eo6IvWK_0RtPfQgr/input
+            - in-messages->"Text" d1KoJcokJ4-dAjFawDadh/input
+            - response->"text" hegZkapAvGUoJvP0ZohDt/response
+            - responseTokens->"Text" c514QAVNg-h6jprKXSbsZ/input
+          visualData: 2126.05630794819/736.0674817511151/230/403//
+        '[5dQ-xIJ9LyK8EDX77XiHP]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 16000
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"output" dzh47N7tJgIAt4V6QwStm/input
+          visualData: 3604.218605501216/307.5965806365682/230/403//
+        '[CDt69eo6IvWK_0RtPfQgr]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 2632.2759580092325/910.0004917126676/330/403//
+        '[CdqongpKWC0EavOYD64LC]:text "output"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Chat (Aidon)" 5dQ-xIJ9LyK8EDX77XiHP/systemPrompt
+          visualData: 3077.541070721065/360.0984015957654/330/403//
+        '[OklB4qLQI0E_OfS4pjk7M]:text "Text"':
+          data:
+            text: >-
+              {{input}}
+
+
+              Select only the capabilities that apply to Heritage Trust Bank
+              strategy heritage bank want to create a mobile app so that
+              customers get better service
+
+
+              Capability ID	Level	Capability	Capability description
+
+              L1-C1	L1	Bank Account Management	Capability for the Financial
+              Institution to offer, administer, and monitor a financial account
+              in which the financial transactions between the bank, other
+              clients of the Financial Institution, and the Financial
+              Institution's client-owner of the financial account are recorded.
+
+              L2-C2	L2	Bank Account Access Management	Capability for the
+              Financial Institution's client-owner of the financial account to
+              enter his/her financial account.  
+
+              L2-C7	L2	Bank Account Compliance Management	Capability for he
+              Financial Institution to have the management of the bank accounts
+              of its client conform to its policies, industry standards or the
+              law of the governments where it has operations.
+
+              L2-C8	L2	Bank Account Creation	Capability to set up a financial
+              account for a client of the Financial Institution.
+
+              L2-C9	L2	Bank Account Freeze/Lock Management	Capability for the
+              Financial Institution to stop a client from transferring money out
+              of the account. Bank accounts are typically frozen for suspected
+              illegal activity, a creditor seeking payment, or by government
+              request. A frozen bank account may also be a sign that the client
+              of the Financial Institution has been a victim of identity theft.
+
+              L2-C10	L2	Bank Account Information Management	Capability to define
+              and maintain the information attributes (relevant information) of
+              a bank account offered by the Financial Institution.
+
+              L2-C16	L2	Bank Account Interest Rate Management	Capability for the
+              Financial Institution to manage the interest rate of a savings
+              bank account owned by a client.
+
+              L2-C20	L2	Bank Account Limit Transfer Determination	Capability for
+              the Financial Institution to determine a bank account's daily
+              limit transfer.
+
+              L2-C21	L2	Bank Account Overdraft Management	Capability to
+              administer and monitor an extension of credit from the Financial
+              Institution that is granted when a bank account reaches zero. The
+              overdraft allows the bank account client-owner to continue
+              withdrawing money even when the account has no funds in it or has
+              insufficient funds to cover the amount of the withdrawal.
+
+              L2-C22	L2	Bank Account Performance Management	Capability to
+              administer and monitor the performance of a bank account offered
+              by the Financial Institution.
+
+              L2-C27	L2	Bank Account Request	Capability to handle a demand from
+              a client or potential client for a bank account offered by the
+              Financial Institution.
+
+              L2-C28	L2	Bank Account Risk Management	Capability for the
+              Financial Institution to identify potential bank account risks in
+              advance, analyze them, and take precautionary steps to reduce
+              risk.
+
+              L2-C33	L2	Bank Account Security Management	Capability to plan,
+              operate, and monitor all activities of protection against the
+              criminal or unauthorized use of electronic equipment, hardware,
+              and data owned or used by the Financial Institution while managing
+              a bank account operated by the Financial Institution.
+
+              L2-C34	L2	Bank Account Selection	Capability for a client of the
+              Financial Institution to pick and choose a bank account among all
+              his / her bank accounts.
+
+              L2-C35	L2	Bank Account Transaction Management	Capability for the
+              Financial Institution to manage all transactions related to a bank
+              account owned by a client.
+
+              L2-C46	L2	Bank Account Pairing	Capability to relate a bank account
+              offered by the Financial Institution to relevant business objects.
+
+              L1-C52	L1	Card Management	Capability to activate, deactivate,
+              issue, deliver, and determine the characteristics of debit and
+              credit cards offered by the Financial Institution to its clients.
+
+              L2-C53	L2	Card Activation	Capability for a client to initiate the
+              use of its credit or debit card issued by the Financial
+              Institution.
+
+              L2-C54	L2	Card Daily Limit Transfer Determination	Capability for
+              the Financial Institution to determine a debit or credit card
+              daily limit transfer determination.
+
+              L2-C55	L2	Card Deactivation	Capability for a client to stop and
+              interrupt the use of its credit or debit card issued by the
+              Financial Institution.
+
+              L2-C56	L2	Card Issuance	Capability for the Financial Institution
+              to enable the use of a credit or debit card to its clients.
+
+              L2-C62	L2	Card Management Information Management	Capability to
+              define and maintain the information attributes (relevant
+              information) of a debit or credit card offered by the Financial
+              Institution.
+
+              L2-C68	L2	Card Management Risk Management	Capability for the
+              Financial Institution to identify potential debit or credit card
+              risks in advance, analyze them, and take precautionary steps to
+              reduce risk.
+
+              L2-C73	L2	Card Performance Management	Capability to administer and
+              monitor the performance of a debit or credit card offered by the
+              Financial Institution.
+
+              L2-C78	L2	Card Physical Design	Capability to design the physical
+              aspects of a credit or debit card to be issued by the Financial
+              Institution.
+
+              L2-C79	L2	Card Request	Capability to administer and monitor a
+              solicitation for a debit or credit card by a client of the
+              Financial Institution.
+
+              L2-C80	L2	Credit Card Reward Management	Capability to allocate a
+              promoted reward to a new debit or credit card issued to a client
+              of the Financial Institution.
+
+              L2-C81	L2	Card Security Management	Capability to plan, operate,
+              and monitor all activities of protection against the criminal or
+              unauthorized use of cards issued by the Financial Institution.
+
+              L2-C85	L2	Card Status	Capability for the Financial Institution to
+              know and communicate the status of an issued credit or debit card
+              to its clients.
+
+              L2-C86	L2	Credit Card Current Balance Determination	Capability for
+              the Financial Institution to determine the current balance of a
+              credit card account owned by a client.
+
+              L2-C87	L2	Credit Card Interest Rate Management	Capability for the
+              Financial Institution to manage the interest rate of a credit card
+              account owned by a client.
+
+              L2-C91	L2	Credit Card Fees Management	Capability for the Financial
+              Institution to complete a transaction to collect at a specific
+              time the fees on a credit card account owned by a client.
+
+              L2-C92	L2	Credit Card Minimal Payment Determination	Capability for
+              the Financial Institution to determine the minimum payment of a
+              credit card account owned by a client.
+
+              L2-C93	L2	Credit Card Limit Determination	Capability for the
+              Financial Institution to determine the maximum loan limit of a
+              credit card account owned by a client.
+
+              L2-C94	L2	Credit Card Transaction Management	Capability for the
+              Financial Institution to manage all transactions related to a
+              credit card account owned by a client.
+
+              L2-C95	L2	Credit Card Payment Date Limit Determination	Capability
+              for the Financial Institution to determine the payment date limit
+              of a credit card account owned by a client.
+
+              L2-C96	L2	Credit Card Overdue Management	Capability for the
+              Financial Institution to manage and collect the overdue amount on
+              a credit card account owned by a client.
+
+              L2-C97	L2	Supplementary Card Management	Capability for the
+              Financial Institution to issue, administer, and monitor a
+              secondary card at the request of a client with the secondary
+              cardholder's name and with their own credit card numbers,
+              expiration dates, and CVV numbers. However, as supplementary cards
+              are secondary cards, their balances, credit limits, and billing
+              statements are still treated as part of the Financial
+              Institution's client account.
+
+              L2-C98	L2	Card Pairing	Capability to relate a debit or credit card
+              issued by the Financial Institution to relevant business objects.
+
+              L1-C103	L1	Collection Management	Capability to administer and
+              monitor the recovery of money from clients owed to the Financial
+              Institution, which may use or not a collection agency or a debt
+              collector.
+
+              L2-C104	L2	Collection Agency Management	Capability to hire,
+              administer, and monitor a partner company used by the Financial
+              Institution to recover from clients funds that are past due or
+              from bank, credit card, or loan accounts that are in default.
+
+              L2-C105	L2	Collection Compliance Management	Capability for the
+              Financial Institution to plan, organize, control, and lead debt
+              collection activities that ensure compliance with laws and
+              standards.
+
+              L2-C106	L2	Collection Information Management	Capability to define
+              and maintain the information attributes (relevant information) of
+              a debt collection made by the Financial Institution.
+
+              L2-C112	L2	Collection Payment Management	Capability to handle debt
+              collection payments from a client to the Financial Institution.
+
+              L2-C129	L2	Collection Payment Settlement	Capability of the
+              Financial Institution to collect the funds for the amount recorded
+              for a debt collection payment.
+
+              L2-C130	L2	Collection Management Performance Management	Capability
+              to administer and monitor the performance of a debt collection
+              made by the Financial Institution.
+
+              L2-C135	L2	Collection Risk Management	Capability for the Financial
+              Institution to identify potential debt collection risks in
+              advance, analyze them, and take precautionary steps to reduce
+              risk.
+
+              L2-C140	L2	Credit Score Reporting Management	Capability to supply
+              information to credit reporting agencies about debt overdue by
+              clients of the Financial Institution.
+
+              L2-C141	L2	Debt Overdue Interest Rate Management	Capability to
+              calculate the interest rate on the debt overdue by a client of the
+              Financial Institution.
+
+              L2-C142	L2	Debt Write-Off Management	Capability to determine when
+              an overdue debt is uncollectible and should be written off as a
+              loss by the Financial Institution.
+
+              L2-C143	L2	Total Debt Overdue Determination	Capability to
+              determine the total amount of debt overdue in a specific currency
+              owed by the client of a Financial Institution.
+
+              L2-C144	L2	Unpaid Debt Lawsuit Management	Capability to administer
+              and monitor a claim or a dispute over unpaid debt brought to a
+              court of law for adjudication by the Financial Institution.
+
+              L1-C148	L1	Commercial Banking	Capability to accept deposits and
+              offer financial services (like checking and savings account
+              services, loans, etc.) to businesses that are clients of the
+              Financial Institution.
+
+              L2-C149	L2	Client Invoice Payment Service Offering	Capability for
+              a commercial client of the Financial Institution to receive
+              payment from its clients using the payment services from the
+              Financial Institution.
+
+              L2-C150	L2	Commercial Bank Account Offering	Capability to offer,
+              administer, and monitor bank accounts for businesses that are
+              clients of the Financial Institution.
+
+              L2-C151	L2	Commercial Banking Information Management	Capability to
+              define and maintain the information attributes (relevant
+              information) of the commercial banking services offered by the
+              Financial Institution.
+
+              L2-C157	L2	Commercial Banking Fees Management	Capability to fix
+              and charge fees for the services offered by the Financial
+              Institution to its business clients.
+
+              L2-C158	L2	Commercial Banking Performance Management	Capability to
+              administer and monitor the performance of the commercial banking
+              services offered by the Financial Institution.
+
+              L2-C163	L2	Commercial Banking Risk Management	Capability for the
+              Financial Institution to identify potential commercial banking
+              risks in advance, analyze them, and take precautionary steps to
+              reduce risk.
+
+              L2-C168	L2	Commercial Credit Cards Offering	Capability to provide,
+              administer, and monitor credit cards to key employees of the
+              business clients of the Financial Institution to handle the
+              payment of commercial expenses incurred on behalf of the business
+              clients of the Financial Institution.
+
+              L2-C169	L2	Commercial Credit Underwriting	Capability to gather and
+              analyze the necessary information for the Financial Institution to
+              make an informed decision to approve or reject a commercial credit
+              or loan request.
+
+              L2-C170	L2	Commercial Debit Cards Offering	Capability to provide,
+              administer, and monitor debit cards to key employees of the
+              business clients of the Financial Institution to handle the
+              payment of commercial expenses incurred on behalf of the business
+              clients of the Financial Institution.
+
+              L2-C171	L2	Commercial Foreign Exchange Service Offering	Capability
+              to sell, purchase, and deliver a specific currency to a business
+              client of the Financial Institution in exchange for a currency
+              owned by the business client.
+
+              L2-C172	L2	Commercial Leasing Offering	Capability for the
+              Financial Institution to provide, administer, and monitor a lease
+              to be used for commercial business property.
+
+              L2-C173	L2	Commercial Secured Line of Credit Offering	Capability
+              to grant capital credit to a business that is a client of the
+              Financial Institution, setting the terms on which it is granted,
+              recovering this credit when it is due, and ensuring compliance
+              with company credit policy, among other credit-related functions.
+
+              L2-C174	L2	Commercial Banking Liquidity Management	Capability to
+              collect and manage cash flows made by businesses that are clients
+              of the Financial Institution.
+
+              L2-C194	L2	Commercial Secured Long-Term Debt Offering (Asset
+              Finance)	Capability to provide short and long-term loans to
+              businesses that are clients of the Financial Institution.
+
+              L2-C195	L2	Commodity Trading Management	Capability to provide,
+              administer, or monitor commodity services to the business clients
+              of the Financial Institution to sell and buy options for energy,
+              metals, minerals, agricultural, or other “soft” commodity products
+              offered in commodity markets.
+
+              L2-C196	L2	Corporate Bonds Management	Capability to provide,
+              administer, or monitor a type of debt security issued by a
+              business client of the Financial Institution and sold by the
+              Financial Institution to investors. The business client of the
+              Financial Institution gets the capital it needs and in return, the
+              investor is paid a pre-established number of interest payments at
+              either a fixed or variable interest rate.
+
+              L2-C197	L2	Employee Pensions Management	Capability to plan,
+              conduct, and control an employee benefit program that commits the
+              business client of the Financial Institution to make regular
+              contributions to a pool of money that is set aside in order to
+              fund payments made to eligible employees after they retire.
+
+              L2-C198	L2	Foreign Currency Bank Account Offering	Capability for
+              the Financial Institution to offer, administer, and monitor a
+              financial account in a specific foreign currency in which the
+              financial transactions between the bank, other clients of the
+              Financial Institution, and the Financial Institution's
+              client-owner of the financial account are recorded.
+
+              L2-C199	L2	Green Financing Management	Capability for the Financial
+              Institution to provide, administer, and monitor structured
+              financial services that have been created to ensure a better
+              environmental outcome and a more resilient future.
+
+              L2-C200	L2	Hedging Management	Capability for the Financial
+              Institution to provide to business clients with a risk management
+              strategy service employed to offset losses in investments by
+              taking an opposite position in a related asset. The reduction in
+              risk provided by hedging also typically results in a reduction in
+              potential profits.
+
+              L2-C201	L2	Syndicated Loan Management	Capability for the Financial
+              Institution to offer a loan in collaboration with a group of
+              lenders (called a syndicate) who work together to provide funds to
+              a corporation that is a client of the Financial Institution.
+
+              L2-C202	L2	Wholesale Trading	Capability to offer banking services
+              to large clients of the Financial Institution, such as other
+              banks, other financial institutions, government agencies, large
+              corporations, and real estate developers.
+
+              L1-C203	L1	Consumer Services	Capability to offer personal
+              financial services to individuals who are clients of the Financial
+              Institution, including leasing, line of credits, retirement
+              accounts, safety deposit boxes, foreign exchange services, saving
+              bank accounts, tax, and estate planning services, etc.
+
+              L2-C204	L2	Consumer Buy Now Pay Later Financial Service
+              Offering	Capability for the Financial Institution to provide,
+              administer, and monitor short-term loans in which a consumer
+              client pays for its current consumer good purchase at a later date
+              through a series of payment installments, after partnering with
+              the retailer where the consumer good purchase was made. These
+              payments are structured in such a way that the payment amounts are
+              equal, and the payment due dates follow a pre-set schedule, with
+              the first payment usually due at checkout or the current date of
+              the purchase of the consumer good.
+
+              L2-C205	L2	Consumer Foreign Exchange Offering	Capability to sell,
+              purchase, and deliver a specific currency to individuals who are
+              clients of the Financial Institution in exchange for a currency
+              owned by the individuals who are clients.
+
+              L2-C206	L2	Consumer Insurance Offering	Capability for the
+              Financial Institution to provide at the moment of purchase,
+              administer, and monitor insurance for a consumer good purchased by
+              the client of the Financial Institution, after partnering with the
+              retailer where the consumer good purchase was made.
+
+              L2-C207	L2	Consumer Leasing Offering	Capability to rent an asset
+              (property, car, or any fixed asset) owned by the client of the
+              Financial Institution.
+
+              L2-C208	L2	Consumer Services Information Management	Capability to
+              define and maintain the information attributes (relevant
+              information) of consumer services offered by the Financial
+              Institution.
+
+              L2-C214	L2	Consumer Services Performance Management	Capability to
+              administer and monitor the performance of consumer services
+              offered by the Financial Institution.
+
+              L2-C219	L2	Consumer Services Risk Management	Capability for the
+              Financial Institution to identify potential consumer services
+              risks in advance, analyze them, and take precautionary steps to
+              reduce risk.
+
+              L2-C224	L2	Invoice Payment Service Offering	Capability to provide
+              a service to individuals who are clients of the Financial
+              Institution to schedule payment on an invoice for goods and
+              services rendered by a business client of the financial
+              institution.
+
+              L2-C225	L2	Mortgage Home Loan Offering	Capability for the
+              Financial Institution to provide, administer, and monitor a loan
+              for the purchase of a residence. A home mortgage will have either
+              a fixed or floating interest rate, and a life span of anywhere
+              from three to usually less than 35 years.
+
+              L2-C226	L2	Personal Asset Secured Loan Offering	Capability for the
+              Financial Institution to provide, administer, and monitor a loan
+              that is protected by a collateral asset, where the Financial
+              institution will place a lien on that asset until the loan is
+              repaid in full.
+
+              L2-C227	L2	Personal Current Bank Account Offering	Capability to
+              offer, administer, and monitor bank accounts for an individual who
+              is a client of the Financial Institution.
+
+              L2-C228	L2	Personal Banking Fees Management	Capability to fix and
+              charge fees for the services offered by the Financial Institution
+              to its individuals who are clients.
+
+              L2-C229	L2	Personal Credit Card Offering	Capability to provide,
+              administer, and monitor credit cards to individuals who are
+              clients of the Financial Institution to handle the payment of
+              expenses made using the credit card of the individuals who are
+              clients of the Financial Institution.
+
+              L2-C230	L2	Personal Non-Secured Line of Credit Offering	Capability
+              to provide credit by the Financial Institution to an individual
+              who is a client of the Financial Institution. This credit enables
+              the client to draw temporarily on the credit facility when the
+              client needs funds.
+
+              L2-C231	L2	Personal Overdraft Loan Service Offering	Capability to
+              administer and monitor an extension of credit from the Financial
+              Institution that is granted when a bank account of individuals who
+              are clients of the Financial Institution reaches zero. The
+              overdraft allows the bank account client-owner to continue
+              withdrawing money even when the account has no funds in it or has
+              insufficient funds to cover the amount of the withdrawal.
+
+              L2-C232	L2	Personal Retirement Account Offering	Capability to
+              offer savings accounts with tax advantages that individuals who
+              are clients of the Financial Institution can open to save and
+              invest in the long term.
+
+              L2-C233	L2	Personal Saving Bank Account Offering	Capability to
+              offer savings accounts that individuals who are clients of the
+              Financial Institution can open to save and invest in the short and
+              long term.
+
+              L2-C234	L2	Personal Tax-Optimized Saving Bank Account	Capability
+              to offer savings accounts with tax advantages that individuals who
+              are clients of the Financial Institution can open to save and
+              invest in the long term.
+
+              L2-C232	L2	Personal Retirement Account Offering	Capability to
+              offer savings accounts with tax advantages that individuals who
+              are clients of the Financial Institution can open to save and
+              invest in the long term.
+
+              L2-C233	L2	Personal Saving Bank Account Offering	Capability to
+              offer savings accounts that individuals who are clients of the
+              Financial Institution can open to save and invest in the short and
+              long term.
+
+              L2-C234	L2	Personal Tax-Optimized Saving Bank Account	Capability
+              to offer savings accounts with tax advantages that individuals who
+              are clients of the Financial Institution can open to save and
+              invest in the long term.
+          outgoingConnections:
+            - output->"Chunk" qkGG4OnwUcvRIVgx3Rae1/input
+          visualData: 530.6122054607738/256.0467570591709/330/403//
+        '[U3RzBaStNfnJT8bvpSgeA]:text "Text"':
+          data:
+            text: >+
+              {{input}}  Create a stratgy document for Heritage Trust Bank.
+              Ensure it aligns with the value of the organisation.
+
+
+              #Executive Summary, 
+
+              #Vision, 
+
+              #Mission, 
+
+              #Value Proposition,
+
+              #Philosophy
+
+              #Strategic Objectives
+
+              #Strategic Initiatives
+
+              #Risk Management
+
+              #Conlusion 
+
+
+
+              Do not make up information
+
+
+
+          outgoingConnections:
+            - output->"Chat (Aidon)" VosixMqNuGAnH5WruB4_a/prompt
+          visualData: 531.0121839994454/1038.5495116287489/330/403//
+        '[VosixMqNuGAnH5WruB4_a]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1600
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" bxWwzlbJxPzToTprIXOk7/input
+          visualData: 1040.2602210000412/764.0954015359312/230/403//
+        '[YMmVkGKxBrdpkaCxueLkl]:text "Text"':
+          data:
+            text: >-
+              {{input}}
+
+              Heritage Trust Bank
+
+              Vision:
+
+              To be the most trusted and respected community bank that builds
+              lasting relationships with our customers by providing exceptional
+              service and supporting their financial well-being.
+
+              Mission:
+
+              At Heritage Trust Bank, our mission is to deliver personalized,
+              high-quality banking services that meet the unique needs of our
+              customers and the communities we serve, while maintaining the
+              highest standards of integrity, professionalism, and customer
+              satisfaction.
+
+              Value Proposition:
+
+              Personalized banking services tailored to each customer's
+              individual needs and goals.
+
+              Exceptional customer service provided by a team of experienced,
+              knowledgeable, and friendly professionals who genuinely care about
+              our customers' financial well-being.
+
+              Strong community focus, supporting local businesses,
+              organizations, and events to foster growth and prosperity in the
+              areas we serve.
+
+              Competitive rates and minimal fees, ensuring our customers receive
+              the best value for their banking needs.
+
+              Secure and reliable banking services, backed by state-of-the-art
+              technology and robust security measures to protect our customers'
+              financial information.
+
+              Customer Segments:
+
+              Individuals and families in the local community who value
+              personalized service and building long-term relationships with
+              their bank.
+
+              Small and medium-sized businesses in the community that require
+              tailored banking solutions and support to help them grow and
+              succeed.
+
+              Retirees and seniors who seek a trusted, reliable bank to manage
+              their savings and provide financial guidance.
+
+              Non-profit organizations and community groups that need a banking
+              partner who understands their unique needs and supports their
+              mission.
+
+              Philosophy:
+
+              At Heritage Trust Bank, we believe that banking is about more than
+              just numbers – it's about people. We are committed to building
+              lasting relationships with our customers based on trust, respect,
+              and a genuine understanding of their unique needs and goals. Our
+              philosophy is rooted in the values of integrity, community, and
+              exceptional service. We strive to be a pillar of strength and
+              support for the communities we serve, helping individuals,
+              families, and businesses achieve their financial dreams. By
+              combining the personal touch of a community bank with the security
+              and reliability of modern banking technology, we aim to provide
+              our customers with the best of both worlds – a banking experience
+              that is both warm and efficient, personal and professional. At
+              Heritage Trust Bank, we are more than just a bank – we are your
+              partner in building a stronger financial future.
+          outgoingConnections:
+            - output->"Chat (Aidon)" VosixMqNuGAnH5WruB4_a/systemPrompt
+          visualData: 564.7041207332015/693.9039430477051/330/403//
+        '[bxWwzlbJxPzToTprIXOk7]:text "Text"':
+          data:
+            text: >-
+              {{input}} 
+
+              Select only the capabilities required for this strategy.
+
+              You need to expand the terms of the outcome for the capability to
+              relate it to the proposed strategy. 
+
+
+              Capabiilties information should be visualised as a table.
+
+
+              Unique ID, Level, Capability, Definition, Outcome, Heat Map
+              Rating, Impact Rating
+
+
+
+              DO NOT Provide an input, note or conclusion. 
+
+              Only provide the table so that the chunks that are coming through
+              appear as one.
+          outgoingConnections:
+            - output->"Chat (Aidon)" 1GkHCnaeK7X4QTC_1eLT3/prompt
+          visualData: 1527.2512205108214/804.260001204432/330/403//
+        '[c514QAVNg-h6jprKXSbsZ]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 2635.682634664263/1087.2893140124627/330/403//
+        '[d1KoJcokJ4-dAjFawDadh]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 2640.554138659657/704.9408339127614/330/403//
+        '[dzh47N7tJgIAt4V6QwStm]:text "output"':
+          data:
+            text: "{{input}}"
+          isSplitRun: true
+          splitRunMax: 1000
+          visualData: 4017.8230879176053/359.58669137068784/330/403//
+        '[hegZkapAvGUoJvP0ZohDt]:text "text"':
+          data:
+            text: |+
+              
+
+              {{chunk}} {{index}}
+
+              {{response}}
+
+
+
+          isSplitRun: true
+          outgoingConnections:
+            - output->"output" CdqongpKWC0EavOYD64LC/input
+          splitRunMax: 1000
+          visualData: 2630.23272336269/328.5956466819857/330/403//
+        '[qkGG4OnwUcvRIVgx3Rae1]:chunk "Chunk"':
+          data:
+            model: gpt-4-1106-preview
+            numTokensPerChunk: 250
+            overlap: 10
+            text: ""
+            useModelInput: false
+          outgoingConnections:
+            - chunks->"text" styUImQqpES3ChcRRzX3U/data
+            - count->"text" hegZkapAvGUoJvP0ZohDt/index
+            - count->"text" styUImQqpES3ChcRRzX3U/count
+            - indexes->"text" hegZkapAvGUoJvP0ZohDt/chunk
+            - indexes->"text" styUImQqpES3ChcRRzX3U/index
+          visualData: 1057.0841479485782/253/230/403//
+        '[styUImQqpES3ChcRRzX3U]:text "text"':
+          data:
+            text: |+
+              
+
+              {{index}} {{count}} 
+
+              {{data}}
+
+          isSplitRun: true
+          outgoingConnections:
+            - output->"Chat (Aidon)" 1GkHCnaeK7X4QTC_1eLT3/systemPrompt
+          splitRunMax: 100
+          visualData: 1520.5935716772942/546.4358909081477/330/403//
+        '[uWI7DwNsd4yk3r29ZIm6X]:graphInput "Graph Input"':
+          data:
+            dataType: chat-message[]
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" U3RzBaStNfnJT8bvpSgeA/input
+          visualData: -52/1078.4160482976408/330/403//
+        '[uvPx-g9LfdySBnejDDD1h]:text "Text"':
+          data:
+            text: >-
+              {{input}} Write an analysis document for the business architect to
+              review.
+
+
+              #Analysis
+
+              ##Key Findings
+
+              ##Next Steps
+          outgoingConnections:
+            - output->"Chat (Aidon)" 5dQ-xIJ9LyK8EDX77XiHP/prompt
+          visualData: 2643.929909237733/1294.8908670422943/330/403//
+    tK25NJP4HJM1vCLj_k3Le:
+      metadata:
+        description: ""
+        id: tK25NJP4HJM1vCLj_k3Le
+        name: search
+      nodes:
+        '[4AFTD-R5Kb9aPWJx3kvmm]:chat "output"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 16000
+            model: gpt-4o-mini
+            overrideMaxTokens: 120000
+            overrideModel: ""
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          visualData: 2895.219881578582/386.93256691462176/230/48//
+        '[JFBXgr2ByTaeTBL5xARgv]:datasetNearestNeighbors "KNN Dataset"':
+          data:
+            datasetId: JaCOrY41oJ5_samGcfvZX
+            k: 60
+          outgoingConnections:
+            - nearestNeighbors->"Prompt" yXQ1SzlDMT5WfYpSPyYzi/input
+          visualData: 1408.358517438174/175.95485422966956/280/52//
+        '[QQKv_XumOxhmFDC-rtWU_]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"output" 4AFTD-R5Kb9aPWJx3kvmm/systemPrompt
+          visualData: 2418.2015608783217/159.18005599388295/280/38//
+        '[XKU8-jFE1jtghxMbxrWVR]:graphInput "Graph Input"':
+          data:
+            dataType: chat-message[]
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" ivC1J7mg3H0cDxu3il9Uk/input
+          visualData: -138.17465102477578/442.08974914030057/330/54//
+        '[iQeUDgpVRjMGdvAkaNH_U]:getEmbedding "Get Embedding"':
+          data:
+            integration: openai
+            useIntegrationInput: false
+          outgoingConnections:
+            - embedding->"KNN Dataset" JFBXgr2ByTaeTBL5xARgv/embedding
+          visualData: 954.0328245282483/195.89982536598458/280/55//
+        '[ivC1J7mg3H0cDxu3il9Uk]:text "Text"':
+          data:
+            text: '{{input}} i want to understand who is using a "Brand Guidelines".
+              Reference which user stories relate to this particularly'
+          outgoingConnections:
+            - output->"Get Embedding" iQeUDgpVRjMGdvAkaNH_U/input
+            - output->"output" 4AFTD-R5Kb9aPWJx3kvmm/prompt
+          visualData: 346.35465986028976/456.01006812577793/330/51//
+        '[yXQ1SzlDMT5WfYpSPyYzi]:prompt "Prompt"':
+          data:
+            computeTokenCount: true
+            enableFunctionCall: false
+            promptText: "{{input}} "
+            type: system
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" QQKv_XumOxhmFDC-rtWU_/message2
+          visualData: 1809.4321611979476/140.85170775899297/280/46//
+    zMbWVRks17WeOIi4AXulw:
+      metadata:
+        description: ""
+        id: zMbWVRks17WeOIi4AXulw
+        name: images/charts
+      nodes:
+        '[Dsr1eD3QZ-w3RZdU3Huvr]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: >+
+              
+              You need to create a chart using the link provided, the data table
+              provided and join the link with JSON code. 
+
+
+              #Create a chart 
+
+
+              https://quickchart.io/chart?width=500&height=300&chart={...} 
+
+
+
+              ## Instructions
+
+              - Use the "Category" field for the x-axis labels and lable names.
+
+              - Map "Severity" textual descriptions to numeric values: 'High' =
+              3, 'Medium' = 2, 'Low' = 1. 
+
+              - Ensure you have 9 Categores represented and that the content
+              from the table is matched
+
+              - Use the specified colors for each severity level:
+                  - High (3): #ff7077
+                  - Medium (2): #fbc740
+                  - Low (1): #5dd6f4
+
+              - **Severity Mappings**:
+                - High (3): #ff7077
+                - Medium (2): #fbc740
+                - Low (1): #5dd6f4
+
+              ### Numeric Values for Severity:
+
+              - High = 3
+
+              - Medium = 2
+
+              - Low = 1
+
+
+              ### Data for the Chart:
+
+              - **Data Points**: 
+                - High: 
+                - Medium: 
+                - Low: 
+
+              ### Chart URL:
+
+
+              ```plaintext
+
+              https://quickchart.io/chart?width=500&height=300&chart={
+                type:'bar',
+                data:{
+                  labels:['Technolody','People','Policies','Marketing','HR','Assets','Location','Date','Audit'],
+                  datasets:[{
+                    label:'Severity Levels',
+                    data:[3, 3, 3, 2, 2, 3, 2, 2, 2],
+                    backgroundColor:[
+                      '#ff7077', // High
+                      '#ff7077', // High
+                      '#ff7077', // High
+                      '#fbc740', // Medium
+                      '#fbc740', // Medium
+                      '#ff7077', // High
+                      '#fbc740', // Medium
+                      '#fbc740', // Medium
+                      '#fbc740'  // Medium
+                    ]
+                  }]
+                }
+              }
+
+              ```
+
+
+
+              Example 
+
+
+              ## Background Chart
+
+
+              ![Bar Chart of Severity
+              Levels](https://quickchart.io/chart?width=500&height=300&chart=%7Btype%3A%27bar%27%2Cdata%3A%7Blabels%3A%5B%27What%20is%20the%20situation%20that%20requires%20change%3F%27%2C%27Why%20did%20this%20happen%3F%27%2C%27Who%20was%20affected%3F%27%2C%27How%20did%20it%20happen%3F%27%2C%27Who%20was%20involved%3F%27%2C%27What%20happened%3F%27%2C%27Where%20did%20it%20happen%3F%27%2C%27When%20did%20it%20happen%3F%27%2C%27How%20was%20this%20first%20noticed%3F%27%5D%2Cdatasets%3A%5B%7Blabel%3A%27Severity%20Levels%27%2Cdata%3A%5B3%2C3%2C3%2C2%2C2%2C3%2C2%2C2%2C2%5D%2CbackgroundColor%3A%5B%27%23ff7077%27%2C%27%23ff7077%27%2C%27%23ff7077%27%2C%27%23fbc740%27%2C%27%23fbc740%27%2C%27%23ff7077%27%2C%27%23fbc740%27%2C%27%23fbc740%27%2C%27%23fbc740%27%5D%7D%5D%7D%7D) 
+
+
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chat (Aidon)" fQrFkmWIStYABKfp3F-hR/systemPrompt
+          visualData: 1323/371/280/726/var(--node-color-4)/var(--node-color-4)
+        '[_9a2Lc9OBMI43Pydf-UD8]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: Create a chart for me to see
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chat (Aidon)" fQrFkmWIStYABKfp3F-hR/prompt
+          visualData: 1321/783/280/727//
+        '[fQrFkmWIStYABKfp3F-hR]:chatAidon "Chat (Aidon)"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          visualData: 1905/548/230/725//
+  metadata:
+    description: ""
+    id: tfDwqRI2GO3GlzLZqR8U4
+    mainGraphId: tK25NJP4HJM1vCLj_k3Le
+    title: Aidon_training_templates
+  plugins:
+    - id: aidon
+      name: Aidon
+      type: built-in
+    - id: huggingFace
+      name: Hugging Face
+      type: built-in

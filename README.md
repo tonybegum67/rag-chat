@@ -1,10 +1,16 @@
-# Betty AI Assistant 💁‍♀️
+# Development Repository
+
+This repository contains development projects and tools.
+
+## 🏗️ Projects
+
+### Betty AI Assistant 💁‍♀️
 
 **Strategic Transformation Assistant powered by Outcome-Based Thinking (OBT)**
 
 Betty is an AI-powered strategic transformation assistant designed to support organizations in implementing Outcome-Based Thinking, What/How Mapping, and cross-functional alignment for maximum business impact.
 
-## 🚀 Features
+#### 🚀 Features
 
 - **Strategic Transformation Support**: Deep reasoning across strategic ideas, outcome statements, and business alignment
 - **Outcome-Based Thinking (OBT) Coaching**: Built-in instructional coaching for OBT methodology
@@ -12,67 +18,74 @@ Betty is an AI-powered strategic transformation assistant designed to support or
 - **Document Processing**: Support for PDF, DOCX, and TXT files up to 10MB
 - **Knowledge Base Management**: Persistent knowledge storage with automatic updates
 - **GPS Tier Mapping**: Strategic outcome classification and business capability alignment
+- **Feedback Analytics**: Admin dashboard with user feedback analytics and improvement insights
 
-## 🏗️ Architecture
+#### 📁 Project Structure
 
 ```
-Betty AI Assistant
-├── betty_app.py          # Main application with Betty's personality
-├── config/               # Configuration management
-│   ├── settings.py       # App and chat configurations
+Betty/                        # Betty AI Assistant project
+├── betty_app.py              # Main Betty application
+├── config/                   # Configuration management
+│   ├── settings.py           # App and chat configurations
 │   └── __init__.py
-├── utils/                # Core utilities
-│   ├── document_processor.py  # Text extraction & processing
-│   ├── vector_store.py        # ChromaDB interface
+├── utils/                    # Core utilities
+│   ├── document_processor.py # Text extraction & processing
+│   ├── vector_store.py       # ChromaDB interface
+│   ├── feedback_manager.py   # User feedback analytics
 │   └── __init__.py
-└── Betty Detailed Doc.md # Comprehensive documentation
+├── streamlit/                # Additional Streamlit interfaces
+│   ├── chat/
+│   │   └── chat.py           # Generic chat interface
+│   └── requirements.txt      # Streamlit-specific dependencies
+├── pages/                    # Multi-page app components
+│   └── admin_dashboard.py    # Analytics dashboard
+├── data/                     # Data storage
+│   ├── betty_chroma_db/      # Vector database
+│   └── betty_feedback.db     # Feedback analytics database
+├── docs/                     # Documentation and knowledge base
+│   ├── Betty for Molex GPS.docx
+│   ├── Molex Manufacturing BA Reference Architecture.docx
+│   └── Betty Detailed Doc.md
+├── requirements.txt          # Python dependencies
+├── example.py               # Usage examples
+├── fix_embedding_dimensions.py  # Database utilities
+├── test_*.py                # Test files
+└── README.md                # Project documentation
 ```
 
-## 🛠️ Technology Stack
+#### 🚀 Quick Start
 
-- **Frontend**: Streamlit
-- **AI Model**: OpenAI GPT-4o
-- **Vector Database**: ChromaDB with persistent storage
-- **Embeddings**: SentenceTransformer (all-MiniLM-L6-v2)
-- **Document Processing**: PyPDF2, python-docx, tiktoken
-- **Deployment**: Streamlit Cloud compatible
-
-## 📋 Prerequisites
-
-- Python 3.8+
-- OpenAI API key
-- Git (for cloning)
-
-## 🚀 Quick Start
-
-### 1. Clone Repository
 ```bash
-git clone https://github.com/tonybegum67/betty_for_molex.git
-cd betty_for_molex
-```
+# Navigate to Betty project
+cd Betty
 
-### 2. Install Dependencies
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-### 3. Set Environment Variables
-```bash
-# Required
+# Set environment variables
+export ANTHROPIC_API_KEY="your_anthropic_api_key_here"
+# OR
 export OPENAI_API_KEY="your_openai_api_key_here"
 
-# Optional configurations
-export CHROMA_DB_PATH="./betty_chroma_db"
-export CHUNK_SIZE="500"
-export MAX_SEARCH_RESULTS="3"
-```
-
-### 4. Run Betty
-```bash
+# Run Betty
 streamlit run betty_app.py
 ```
 
 Betty will be available at `http://localhost:8501`
+
+#### 📚 Documentation
+
+For complete documentation, usage guides, and API reference, see [Betty/README.md](Betty/README.md)
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Streamlit with multi-page support
+- **AI Models**: Claude 3.5 Sonnet (primary), OpenAI GPT-4o (secondary)
+- **Vector Database**: ChromaDB with persistent storage
+- **Embeddings**: SentenceTransformer (all-mpnet-base-v2)
+- **Document Processing**: PyPDF2, python-docx, tiktoken
+- **Analytics**: SQLite with feedback tracking
+- **Deployment**: Streamlit Cloud compatible
 
 ## 🎯 Betty's Core Competencies
 
@@ -266,49 +279,24 @@ betty_for_molex/
 - No sensitive data sent to external services (except OpenAI API)
 - Vector database stored locally with encryption at rest
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**"Please set your OpenAI API key"**
-- Verify API key in environment variables or Streamlit secrets
-- Check API key has sufficient credits
-
-**"Could not connect to ChromaDB"**
-- Check database path permissions
-- Clear corrupted database: `rm -rf betty_chroma_db/`
-
-**"No text could be extracted"**
-- Verify file format is supported (PDF, DOCX, TXT)
-- Check file isn't password-protected or corrupted
-- Ensure file size is under 10MB limit
-
-For detailed troubleshooting, see `Betty Detailed Doc.md`
-
-## 📄 Documentation
-
-- **[Betty Detailed Doc.md](Betty%20Detailed%20Doc.md)**: Comprehensive technical documentation
-- **Architecture diagrams**: System design and component interactions
-- **API reference**: Complete method documentation
-- **Deployment guides**: Local, cloud, and Docker deployment
-- **Performance optimization**: Tuning guidelines and best practices
-
 ## 📞 Support
 
 - **Issues**: Report bugs or request features via GitHub Issues
-- **Documentation**: Comprehensive guides in `Betty Detailed Doc.md`
+- **Documentation**: See individual project README files for detailed guides
 - **Development**: Follow contribution guidelines for code changes
+
+## 👥 Credits
+
+**Author**: Tony Begum, Chief AI Officer  
+**Company**: BoldARC  
 
 ## 📜 License
 
-Private repository - All rights reserved.
-
-## 🏷️ Version
-
-**Betty v2.2 Beta** - Strategic Transformation Assistant with OBT methodology
+Private repository - All rights reserved to BoldARC.
 
 ---
 
-**Built with ❤️ for strategic transformation and outcome-based thinking**
+**Built with ❤️ for development and innovation**  
+**Developed by BoldARC**
 
 *Last updated: January 2025*

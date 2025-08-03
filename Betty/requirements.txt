@@ -1,0 +1,16 @@
+streamlit
+openai
+chromadb
+sentence-transformers
+PyPDF2
+python-docx
+tiktoken
+anthropic
+pysqlite3-binary; sys_platform == 'linux'
+# Enhanced RAG dependencies
+nltk
+spacy
+# Visualization dependencies
+plotly
+pandas
+streamlit-mermaid
