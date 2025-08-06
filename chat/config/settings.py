@@ -1,6 +1,6 @@
 """
-Configuration settings for the Chat RAG system.
-Independent of Betty configuration for clean separation.
+Configuration settings for the RAG Chat application.
+Standalone configuration for the chat system.
 """
 import os
 from pathlib import Path

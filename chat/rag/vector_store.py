@@ -1,6 +1,6 @@
 """
 Vector store implementation using ChromaDB with persistent storage.
-Independent of Betty's vector store for clean separation.
+Standalone vector store for the RAG chat application.
 """
 import os
 import uuid

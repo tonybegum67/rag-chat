@@ -30,7 +30,7 @@ chat/
 │   ├── chroma_db/         # Vector database storage
 │   └── documents/         # Processed document storage
 └── data/
-    └── betty_feedback.db  # Feedback database
+    └── feedback.db        # User feedback and analytics database
 ```
 
 ## 🚀 Quick Start

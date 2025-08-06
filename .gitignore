@@ -1,3 +1,6 @@
+# Ignore Betty directory - has its own repository
+Betty/
+
 # Streamlit secrets - NEVER commit these!
 .streamlit/secrets.toml
 .streamlit/config.toml
