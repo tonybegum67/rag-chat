@@ -335,9 +335,9 @@ with st.sidebar:
 
     uploaded_files = st.file_uploader(
         "Upload documents",
-        type=["txt", "pdf", "docx", "md"],
+        type=["txt", "pdf", "docx", "md", "xlsx", "xls"],
         accept_multiple_files=True,
-        help="Upload documents to create or add to a knowledge base"
+        help="Upload documents to create or add to a knowledge base (supports TXT, PDF, DOCX, MD, XLSX, XLS)"
     )
 
     if st.button("Process and Add Documents"):

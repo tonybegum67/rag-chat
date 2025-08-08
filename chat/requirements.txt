@@ -4,6 +4,8 @@ chromadb>=0.4.22
 sentence-transformers
 PyPDF2
 python-docx
+openpyxl  # For Excel file processing
+pandas  # For Excel data handling and conversion
 tiktoken
 pysqlite3-binary  # Required for Streamlit Cloud ChromaDB compatibility
 streamlit-mermaid

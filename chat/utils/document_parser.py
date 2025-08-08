@@ -24,6 +24,13 @@ try:
 except ImportError:
     DOCX_AVAILABLE = False
 
+try:
+    import pandas as pd
+    import openpyxl
+    EXCEL_AVAILABLE = True
+except ImportError:
+    EXCEL_AVAILABLE = False
+
 from config.settings import ChatConfig, DOCUMENTS_PATH
 
 # Setup logging
@@ -151,6 +158,67 @@ class DocumentParser:
             logger.error(f"Error parsing DOCX: {e}")
             raise ValueError(f"Could not parse DOCX file: {str(e)}")
     
+    def parse_excel(self, file_content: Union[bytes, io.BytesIO]) -> str:
+        """Extract text from Excel file (XLS, XLSX)"""
+        if not EXCEL_AVAILABLE:
+            raise ImportError("openpyxl and pandas not available. Install with: pip install openpyxl pandas")
+        
+        try:
+            if isinstance(file_content, bytes):
+                file_content = io.BytesIO(file_content)
+            
+            # Read Excel file with pandas
+            # Try to read all sheets
+            excel_file = pd.ExcelFile(file_content)
+            text_parts = []
+            
+            for sheet_name in excel_file.sheet_names:
+                try:
+                    # Read the sheet
+                    df = pd.read_excel(excel_file, sheet_name=sheet_name, header=None)
+                    
+                    # Skip empty sheets
+                    if df.empty or df.isna().all().all():
+                        continue
+                    
+                    sheet_text = f"--- Sheet: {sheet_name} ---\n"
+                    
+                    # Convert DataFrame to text representation
+                    # Handle different data types appropriately
+                    rows = []
+                    for index, row in df.iterrows():
+                        # Convert row to string, handling NaN values
+                        row_values = []
+                        for value in row:
+                            if pd.isna(value):
+                                row_values.append("")
+                            elif isinstance(value, (int, float)):
+                                row_values.append(str(value))
+                            else:
+                                row_values.append(str(value).strip())
+                        
+                        # Only add non-empty rows
+                        row_text = " | ".join(row_values).strip()
+                        if row_text and row_text != " | " * (len(row_values) - 1):
+                            rows.append(row_text)
+                    
+                    if rows:
+                        sheet_text += "\n".join(rows)
+                        text_parts.append(sheet_text)
+                        
+                except Exception as e:
+                    logger.warning(f"Could not process sheet '{sheet_name}': {e}")
+                    continue
+            
+            if not text_parts:
+                raise ValueError("No readable content found in Excel file")
+            
+            return "\n\n".join(text_parts)
+            
+        except Exception as e:
+            logger.error(f"Error parsing Excel file: {e}")
+            raise ValueError(f"Could not parse Excel file: {str(e)}")
+    
     def parse_text(self, file_content: Union[bytes, str]) -> str:
         """Process plain text file"""
         try:
@@ -202,6 +270,8 @@ class DocumentParser:
                 content = self.parse_pdf(file_content)
             elif file_ext == '.docx':
                 content = self.parse_docx(file_content)
+            elif file_ext in ['.xlsx', '.xls']:
+                content = self.parse_excel(file_content)
             elif file_ext in ['.txt', '.md']:
                 content = self.parse_text(file_content)
             else:
