@@ -94,5 +94,13 @@
     "upload_date": "2025-08-07T18:36:03.207535",
     "file_size": 3771,
     "content_length": 3771
+  },
+  "eb23d0ecf74446ef53a11a47263ff3696acd269194e2f61271b6e460818b6d2d": {
+    "filename": "test_document.txt",
+    "storage_path": "/Users/tonybegum/Dev/chat/storage/documents/eb23d0ec_test_document.txt",
+    "storage_filename": "eb23d0ec_test_document.txt",
+    "upload_date": "2025-08-07T21:07:38.688651",
+    "file_size": 125,
+    "content_length": 125
   }
 }

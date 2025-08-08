@@ -44,6 +44,28 @@ st.set_page_config(
 st.title(f"{ChatConfig.PAGE_ICON} {ChatConfig.PAGE_TITLE}")
 st.caption("Chat with your documents using AI")
 
+# Debug info in expander (only visible when deployed)
+with st.expander("🔧 System Diagnostics", expanded=False):
+    import platform
+    from config.settings import IS_STREAMLIT_CLOUD, STORAGE_ROOT, DOCUMENTS_PATH, CHROMA_DB_PATH
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("**Environment Info:**")
+        st.write(f"- Platform: {platform.system()}")
+        st.write(f"- Python: {platform.python_version()}")
+        st.write(f"- Streamlit Cloud: {'Yes' if IS_STREAMLIT_CLOUD else 'No'}")
+        st.write(f"- User: {os.environ.get('USER', 'N/A')}")
+        st.write(f"- Home: {os.environ.get('HOME', 'N/A')}")
+    
+    with col2:
+        st.write("**Storage Paths:**")
+        st.write(f"- Storage Root: `{STORAGE_ROOT}`")
+        st.write(f"- Documents: `{DOCUMENTS_PATH}`")
+        st.write(f"- ChromaDB: `{CHROMA_DB_PATH}`")
+        st.write(f"- Storage Exists: {STORAGE_ROOT.exists()}")
+        st.write(f"- Writable: {os.access(str(STORAGE_ROOT), os.W_OK) if STORAGE_ROOT.exists() else False}")
+
 # Initialize components
 @st.cache_resource
 def init_components():

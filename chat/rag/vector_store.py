@@ -29,11 +29,27 @@ class ChatVectorStore:
                  persist_directory: str = None,
                  embedding_model: str = None):
         
-        self.persist_directory = persist_directory or CHROMA_DB_PATH
+        # Convert Path to string and ensure it's absolute
+        if persist_directory:
+            self.persist_directory = str(persist_directory)
+        else:
+            # Ensure CHROMA_DB_PATH is converted to string
+            self.persist_directory = str(CHROMA_DB_PATH)
+        
         self.embedding_model_name = embedding_model or ChatConfig.EMBEDDING_MODEL
         
-        # Ensure persist directory exists
-        os.makedirs(self.persist_directory, exist_ok=True)
+        # Ensure persist directory exists with better error handling
+        try:
+            os.makedirs(self.persist_directory, exist_ok=True)
+            logger.info(f"Using ChromaDB directory: {self.persist_directory}")
+        except Exception as e:
+            logger.error(f"Failed to create persist directory {self.persist_directory}: {e}")
+            # Try to use a fallback temp directory
+            import tempfile
+            fallback_dir = os.path.join(tempfile.gettempdir(), "chroma_db_fallback")
+            os.makedirs(fallback_dir, exist_ok=True)
+            self.persist_directory = fallback_dir
+            logger.warning(f"Using fallback directory: {self.persist_directory}")
         
         # Initialize ChromaDB client with persistence
         try:

@@ -10,25 +10,41 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Detect if running on Streamlit Cloud
+# Detect if running on Streamlit Cloud or in container environment
 IS_STREAMLIT_CLOUD = (
     os.environ.get('STREAMLIT_RUNTIME_ENV') == 'cloud' or
     os.environ.get('STREAMLIT_SERVER_ADDRESS') is not None or
-    os.environ.get('STREAMLIT_SHARING_MODE') == 'true'
+    os.environ.get('STREAMLIT_SHARING_MODE') == 'true' or
+    os.environ.get('HOME') == '/home/appuser' or  # Common Streamlit Cloud home
+    os.environ.get('USER') == 'appuser'  # Common Streamlit Cloud user
 )
 
 def get_storage_root():
     """Get appropriate storage root based on environment"""
+    import logging
+    logger = logging.getLogger(__name__)
+    
     if IS_STREAMLIT_CLOUD:
         # Use temp directory on Streamlit Cloud
         # Note: This is ephemeral and will be cleared on restart
         base_temp = Path(tempfile.gettempdir())
         storage_dir = base_temp / "rag_chat_storage"
-        storage_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            storage_dir.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Streamlit Cloud detected. Using temp storage: {storage_dir}")
+        except Exception as e:
+            logger.error(f"Failed to create temp storage directory: {e}")
+            # Create a unique temp directory as fallback
+            import uuid
+            storage_dir = base_temp / f"rag_chat_{uuid.uuid4().hex[:8]}"
+            storage_dir.mkdir(parents=True, exist_ok=True)
+            logger.warning(f"Using fallback temp storage: {storage_dir}")
         return storage_dir
     else:
         # Use local project directory for development
-        return Path(__file__).parent.parent / "storage"
+        storage_dir = Path(__file__).parent.parent / "storage"
+        logger.info(f"Local environment detected. Using project storage: {storage_dir}")
+        return storage_dir
 
 # Base paths with environment detection
 PROJECT_ROOT = Path(__file__).parent.parent

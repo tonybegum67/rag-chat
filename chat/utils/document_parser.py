@@ -41,8 +41,25 @@ class DocumentParser:
     """Handles document parsing with persistent storage"""
     
     def __init__(self, storage_path: str = None):
-        self.storage_path = Path(storage_path) if storage_path else DOCUMENTS_PATH
-        self.storage_path.mkdir(parents=True, exist_ok=True)
+        # Convert to Path and ensure it's valid
+        if storage_path:
+            self.storage_path = Path(storage_path)
+        else:
+            # Ensure DOCUMENTS_PATH is properly handled
+            self.storage_path = Path(str(DOCUMENTS_PATH))
+        
+        # Create directory with better error handling
+        try:
+            self.storage_path.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Using document storage: {self.storage_path}")
+        except Exception as e:
+            logger.error(f"Failed to create storage directory {self.storage_path}: {e}")
+            # Use a fallback temp directory
+            import tempfile
+            fallback_dir = Path(tempfile.mkdtemp(prefix="doc_storage_"))
+            self.storage_path = fallback_dir
+            logger.warning(f"Using fallback storage: {self.storage_path}")
+        
         self.metadata_file = self.storage_path / "documents_metadata.json"
         self.metadata = self._load_metadata()
     
