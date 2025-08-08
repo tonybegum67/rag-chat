@@ -223,11 +223,15 @@ class ChatVectorStore:
             formatted_results = []
             if results['documents'] and results['documents'][0]:
                 for i in range(len(results['documents'][0])):
+                    distance = results['distances'][0][i] if results['distances'][0] else 0.0
+                    # ChromaDB returns cosine distance, convert to similarity
+                    # For cosine distance, similarity = 1 - distance, but clamp to [0, 1]
+                    similarity = max(0.0, min(1.0, 1 - distance))
                     formatted_results.append({
                         'content': results['documents'][0][i],
                         'metadata': results['metadatas'][0][i] if results['metadatas'][0] else {},
-                        'distance': results['distances'][0][i] if results['distances'][0] else 0.0,
-                        'similarity': 1 - (results['distances'][0][i] if results['distances'][0] else 0.0)
+                        'distance': distance,
+                        'similarity': similarity
                     })
             
             # Filter by similarity threshold

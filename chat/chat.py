@@ -283,6 +283,16 @@ Use this information to answer the user's question. If the information isn't rel
 # Sidebar for document management and settings
 with st.sidebar:
     st.header("📚 Knowledge Base Management")
+    
+    # Show warning if on Streamlit Cloud
+    from config.settings import IS_STREAMLIT_CLOUD
+    if IS_STREAMLIT_CLOUD:
+        st.warning(
+            "⚠️ **Temporary Storage Active**\n\n"
+            "You're using Streamlit Cloud's temporary storage. "
+            "Documents and collections will be lost when the app restarts. "
+            "For persistent storage, consider using external databases."
+        )
 
     def set_active_collection(collection_name):
         """Callback function to set the active collection in session state."""
