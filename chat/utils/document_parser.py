@@ -76,7 +76,11 @@ class DocumentParser:
             safe_filename = f"document_{file_hash[:8]}"
         
         # Create unique storage path
-        storage_filename = f"{file_hash[:8]}_{safe_filename}.txt"
+        # If the filename already has .txt extension, don't add another one
+        if safe_filename.endswith('.txt'):
+            storage_filename = f"{file_hash[:8]}_{safe_filename}"
+        else:
+            storage_filename = f"{file_hash[:8]}_{safe_filename}.txt"
         storage_path = self.storage_path / storage_filename
         
         # Store document content
