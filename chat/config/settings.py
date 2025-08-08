@@ -12,26 +12,89 @@ load_dotenv()
 
 # Detect if running on Streamlit Cloud or in container environment
 IS_STREAMLIT_CLOUD = (
+    # Official Streamlit Cloud environment variables
     os.environ.get('STREAMLIT_RUNTIME_ENV') == 'cloud' or
     os.environ.get('STREAMLIT_SERVER_ADDRESS') is not None or
     os.environ.get('STREAMLIT_SHARING_MODE') == 'true' or
-    os.environ.get('HOME') == '/home/appuser' or  # Common Streamlit Cloud home
-    os.environ.get('USER') == 'appuser'  # Common Streamlit Cloud user
+    # Check for Streamlit-specific environment
+    'STREAMLIT' in os.environ or
+    os.environ.get('STREAMLIT_SERVER_HEADLESS') == 'true' or
+    # Common Streamlit Cloud paths and users
+    os.environ.get('HOME') == '/home/appuser' or
+    os.environ.get('USER') == 'appuser' or
+    # Check if running in a container (common for Streamlit Cloud)
+    os.path.exists('/.dockerenv') or
+    os.environ.get('KUBERNETES_SERVICE_HOST') is not None or
+    # Check for cloud platform indicators
+    os.environ.get('DYNO') is not None or  # Heroku
+    os.environ.get('AWS_LAMBDA_FUNCTION_NAME') is not None or  # AWS Lambda
+    os.environ.get('GOOGLE_CLOUD_PROJECT') is not None or  # Google Cloud
+    # Check if not running locally (no .git directory in parent)
+    (not os.path.exists(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.git')) and
+     os.environ.get('USER') != os.environ.get('LOGNAME'))  # Different user context
 )
+
+def is_streamlit_running():
+    """Detect if we're running in a Streamlit environment (local or cloud)"""
+    try:
+        import streamlit as st
+        # Check if we can access Streamlit's runtime context
+        try:
+            # This will only work if we're actually running in Streamlit
+            st.get_option("server.headless")
+            return True
+        except:
+            # Fallback - if streamlit is imported, we're likely in Streamlit
+            return True
+    except ImportError:
+        return False
+
+def is_cloud_environment():
+    """Enhanced cloud detection that works at runtime"""
+    # First check the static IS_STREAMLIT_CLOUD
+    if IS_STREAMLIT_CLOUD:
+        return True
+    
+    # Runtime checks for Streamlit Cloud
+    if is_streamlit_running():
+        try:
+            import streamlit as st
+            # Check if secrets are available (typical in Streamlit Cloud)
+            if hasattr(st, 'secrets') and len(st.secrets) > 0:
+                return True
+        except:
+            pass
+    
+    # Additional runtime checks
+    cloud_indicators = [
+        # Check for temp directory usage (common in cloud)
+        '/tmp' in str(get_storage_root()) if 'get_storage_root' in globals() else False,
+        # Check if we're running on a different user than locally expected
+        os.environ.get('USER') in ['appuser', 'runner', 'app'],
+        # Check for common cloud environment variables
+        any(key in os.environ for key in ['DYNO', 'AWS_EXECUTION_ENV', 'GOOGLE_CLOUD_PROJECT']),
+        # Check if we're in a containerized environment
+        os.path.exists('/.dockerenv'),
+    ]
+    
+    return any(cloud_indicators)
 
 def get_storage_root():
     """Get appropriate storage root based on environment"""
     import logging
     logger = logging.getLogger(__name__)
     
-    if IS_STREAMLIT_CLOUD:
+    # Use both static and dynamic detection for maximum reliability
+    is_cloud = IS_STREAMLIT_CLOUD or is_cloud_environment()
+    
+    if is_cloud:
         # Use temp directory on Streamlit Cloud
         # Note: This is ephemeral and will be cleared on restart
         base_temp = Path(tempfile.gettempdir())
         storage_dir = base_temp / "rag_chat_storage"
         try:
             storage_dir.mkdir(parents=True, exist_ok=True)
-            logger.info(f"Streamlit Cloud detected. Using temp storage: {storage_dir}")
+            logger.info(f"Cloud environment detected. Using temp storage: {storage_dir}")
         except Exception as e:
             logger.error(f"Failed to create temp storage directory: {e}")
             # Create a unique temp directory as fallback

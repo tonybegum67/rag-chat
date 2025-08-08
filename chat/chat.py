@@ -47,16 +47,21 @@ st.caption("Chat with your documents using AI")
 # Debug info in expander (only visible when deployed)
 with st.expander("🔧 System Diagnostics", expanded=False):
     import platform
-    from config.settings import IS_STREAMLIT_CLOUD, STORAGE_ROOT, DOCUMENTS_PATH, CHROMA_DB_PATH
+    from config.settings import IS_STREAMLIT_CLOUD, STORAGE_ROOT, DOCUMENTS_PATH, CHROMA_DB_PATH, is_cloud_environment
     
-    col1, col2 = st.columns(2)
+    # Use dynamic detection
+    is_cloud = is_cloud_environment()
+    
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.write("**Environment Info:**")
         st.write(f"- Platform: {platform.system()}")
         st.write(f"- Python: {platform.python_version()}")
-        st.write(f"- Streamlit Cloud: {'Yes' if IS_STREAMLIT_CLOUD else 'No'}")
+        st.write(f"- Streamlit Cloud (Static): {'Yes' if IS_STREAMLIT_CLOUD else 'No'}")
+        st.write(f"- Cloud Environment (Dynamic): {'Yes' if is_cloud else 'No'}")
         st.write(f"- User: {os.environ.get('USER', 'N/A')}")
         st.write(f"- Home: {os.environ.get('HOME', 'N/A')}")
+        st.write(f"- Logname: {os.environ.get('LOGNAME', 'N/A')}")
     
     with col2:
         st.write("**Storage Paths:**")
@@ -65,6 +70,33 @@ with st.expander("🔧 System Diagnostics", expanded=False):
         st.write(f"- ChromaDB: `{CHROMA_DB_PATH}`")
         st.write(f"- Storage Exists: {STORAGE_ROOT.exists()}")
         st.write(f"- Writable: {os.access(str(STORAGE_ROOT), os.W_OK) if STORAGE_ROOT.exists() else False}")
+    
+    with col3:
+        st.write("**Detection Details:**")
+        
+        # Show specific detection criteria
+        detection_checks = {
+            "STREAMLIT_RUNTIME_ENV": os.environ.get('STREAMLIT_RUNTIME_ENV') == 'cloud',
+            "STREAMLIT_SERVER_ADDRESS": os.environ.get('STREAMLIT_SERVER_ADDRESS') is not None,
+            "STREAMLIT env var": 'STREAMLIT' in os.environ,
+            "STREAMLIT_SERVER_HEADLESS": os.environ.get('STREAMLIT_SERVER_HEADLESS') == 'true',
+            "appuser HOME": os.environ.get('HOME') == '/home/appuser',
+            "appuser USER": os.environ.get('USER') == 'appuser',
+            "Docker container": os.path.exists('/.dockerenv'),
+            "Kubernetes": bool(os.environ.get('KUBERNETES_SERVICE_HOST')),
+            "No .git": not os.path.exists('.git'),
+        }
+        
+        for check, result in detection_checks.items():
+            status = "✅" if result else "❌"
+            st.write(f"{status} {check}")
+        
+        # Show all STREAMLIT environment variables
+        streamlit_vars = {k: v for k, v in os.environ.items() if 'STREAMLIT' in k.upper()}
+        if streamlit_vars:
+            st.write("**Streamlit Env Vars:**")
+            for var, val in list(streamlit_vars.items())[:3]:  # Show first 3
+                st.write(f"- {var}: {str(val)[:30]}...")
 
 # Initialize components
 @st.cache_resource
